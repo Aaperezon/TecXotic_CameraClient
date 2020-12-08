@@ -19,7 +19,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
             ""id"": ""bf238e4b-b752-4559-b7df-8c2d2c2434a3"",
             ""actions"": [
                 {
-                    ""name"": ""ShowHide"",
+                    ""name"": ""PixyLight"",
                     ""type"": ""Button"",
                     ""id"": ""ef3e84ad-696c-4d23-97e4-a0d914f6fe7e"",
                     ""expectedControlType"": ""Button"",
@@ -31,11 +31,11 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""79fc90ad-46ed-4a61-8915-afbaffda95e9"",
-                    ""path"": ""<Gamepad>/select"",
+                    ""path"": ""<DualShockGamepad>/touchpadButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ShowHide"",
+                    ""action"": ""PixyLight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -46,7 +46,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
 }");
         // CameraVideo
         m_CameraVideo = asset.FindActionMap("CameraVideo", throwIfNotFound: true);
-        m_CameraVideo_ShowHide = m_CameraVideo.FindAction("ShowHide", throwIfNotFound: true);
+        m_CameraVideo_PixyLight = m_CameraVideo.FindAction("PixyLight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -96,12 +96,12 @@ public class @RemoteController : IInputActionCollection, IDisposable
     // CameraVideo
     private readonly InputActionMap m_CameraVideo;
     private ICameraVideoActions m_CameraVideoActionsCallbackInterface;
-    private readonly InputAction m_CameraVideo_ShowHide;
+    private readonly InputAction m_CameraVideo_PixyLight;
     public struct CameraVideoActions
     {
         private @RemoteController m_Wrapper;
         public CameraVideoActions(@RemoteController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ShowHide => m_Wrapper.m_CameraVideo_ShowHide;
+        public InputAction @PixyLight => m_Wrapper.m_CameraVideo_PixyLight;
         public InputActionMap Get() { return m_Wrapper.m_CameraVideo; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -111,22 +111,22 @@ public class @RemoteController : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_CameraVideoActionsCallbackInterface != null)
             {
-                @ShowHide.started -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnShowHide;
-                @ShowHide.performed -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnShowHide;
-                @ShowHide.canceled -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnShowHide;
+                @PixyLight.started -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnPixyLight;
+                @PixyLight.performed -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnPixyLight;
+                @PixyLight.canceled -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnPixyLight;
             }
             m_Wrapper.m_CameraVideoActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @ShowHide.started += instance.OnShowHide;
-                @ShowHide.performed += instance.OnShowHide;
-                @ShowHide.canceled += instance.OnShowHide;
+                @PixyLight.started += instance.OnPixyLight;
+                @PixyLight.performed += instance.OnPixyLight;
+                @PixyLight.canceled += instance.OnPixyLight;
             }
         }
     }
     public CameraVideoActions @CameraVideo => new CameraVideoActions(this);
     public interface ICameraVideoActions
     {
-        void OnShowHide(InputAction.CallbackContext context);
+        void OnPixyLight(InputAction.CallbackContext context);
     }
 }

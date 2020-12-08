@@ -21,11 +21,12 @@ public class NetworkManager : MonoBehaviour
     RemoteController controller;
     ControllerValue controllerValue = new ControllerValue();
 
+    
     void Awake()
     {
         controller = new RemoteController();
-        controller.CameraVideo.ShowHide.performed += ctx => controllerValue.show_hide = true;
-        controller.CameraVideo.ShowHide.canceled += ctx => controllerValue.show_hide = false;
+        controller.CameraVideo.PixyLight.performed += ctx => controllerValue.pixyLight = true;
+        controller.CameraVideo.PixyLight.canceled += ctx => controllerValue.pixyLight = false;
     }
 
     void OnEnable(){
@@ -111,6 +112,6 @@ public class NetworkManager : MonoBehaviour
 public class ControllerValue
 {
     public string Name;
-    public bool show_hide = false;
+    public bool pixyLight = false;
 }
 

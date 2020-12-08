@@ -6,7 +6,7 @@
             "id": "bf238e4b-b752-4559-b7df-8c2d2c2434a3",
             "actions": [
                 {
-                    "name": "ShowHide",
+                    "name": "PixyLight",
                     "type": "Button",
                     "id": "ef3e84ad-696c-4d23-97e4-a0d914f6fe7e",
                     "expectedControlType": "Button",
@@ -18,11 +18,11 @@
                 {
                     "name": "",
                     "id": "79fc90ad-46ed-4a61-8915-afbaffda95e9",
-                    "path": "<Gamepad>/select",
+                    "path": "<DualShockGamepad>/touchpadButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ShowHide",
+                    "action": "PixyLight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
