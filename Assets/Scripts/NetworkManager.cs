@@ -18,30 +18,14 @@ public class NetworkManager : MonoBehaviour
     NetworkStream theStream = null;
     StreamWriter theWriter = null;
     Image connectionStatus;
-    RemoteController controller;
-    ControllerValue controllerValue = new ControllerValue();
-
-    
-    void Awake()
-    {
-        controller = new RemoteController();
-        controller.CameraVideo.PixyLight.performed += ctx => controllerValue.pixyLight = true;
-        controller.CameraVideo.PixyLight.canceled += ctx => controllerValue.pixyLight = false;
-    }
-
-    void OnEnable(){
-        controller.CameraVideo.Enable();
-    }
-     void OnDisable(){
-        controller.CameraVideo.Disable();
-    }
-
+    bool connected;
+  
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        connectionStatus = GetComponent<Image>();
+        connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
         connectionStatus.color = Color.red;
         mySocket = new TcpClient();
         if (SetupSocket())
@@ -63,33 +47,26 @@ public class NetworkManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (!mySocket.Connected)
         {
+            connected = false;
             SetupSocket();
         }
         else
         {
-            SendData();
+            connected = true;
+            connectionStatus.color = Color.green;
+
         }
     }
+    public bool GetConnectionStatus(){
+        return connected;
+    }  
 
-
-
-    void OnApplicationQuit()
-    {
-        if (mySocket != null && mySocket.Connected)
-            mySocket.Close();
-    }
-   
-
-    private void SendData()
-    {
-
-        string json = JsonUtility.ToJson(controllerValue);
+    public void Send(Byte[] sendBytes){
         theStream = mySocket.GetStream();
-        Byte[] sendBytes = System.Text.Encoding.UTF8.GetBytes(json);
         try
         {
             theStream.Write(sendBytes, 0, sendBytes.Length);
@@ -99,19 +76,16 @@ public class NetworkManager : MonoBehaviour
             Debug.Log("socket error");
 
         }
-        connectionStatus.color = Color.green;
-
-
-
-
     }
-}
 
 
-[Serializable]
-public class ControllerValue
-{
-    public string Name;
-    public bool pixyLight = false;
+    void OnApplicationQuit()
+    {
+        if (mySocket != null && mySocket.Connected)
+            mySocket.Close();
+    }
+   
+
+  
 }
 
