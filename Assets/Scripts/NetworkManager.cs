@@ -11,7 +11,7 @@ using UnityEngine.InputSystem;
 
 public class NetworkManager : MonoBehaviour
 {
-    public String Host = "raspberrypi.local";
+    public String Host = "raspberrypi.local"; // 127.0.0.0 -- 127.0.0.1 = localhost
     public Int32 Port = 55000;
        
     TcpClient mySocket = null;

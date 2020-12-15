@@ -48,6 +48,7 @@
      <Compile Include="Assets\RemoteController.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\SendData.cs" />
+     <Compile Include="Assets\Scripts\WebCamVideo.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/AaronPerezOntiveros/Documents/TecXotic/TecXoticController/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
