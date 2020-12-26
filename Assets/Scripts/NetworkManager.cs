@@ -19,19 +19,18 @@ public class NetworkManager : MonoBehaviour
     StreamWriter theWriter = null;
     Image connectionStatus;
     bool connected;
+    public GameObject toggleSwitch;
   
 
 
     // Start is called before the first frame update
     public void Start()
     {
+        
         connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
         connectionStatus.color = Color.red;
         mySocket = new TcpClient();
-        if (SetupSocket())
-        {
-            Debug.Log("socket is set up");
-        }
+        
     }
     public bool SetupSocket()
     {
@@ -49,32 +48,41 @@ public class NetworkManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (!mySocket.Connected)
-        {
-            connected = false;
-            SetupSocket();
-        }
-        else
-        {
-            connected = true;
-            connectionStatus.color = Color.green;
+        if(toggleSwitch.GetComponent<ToggleController>().GetState() == true){
+            if (!mySocket.Connected)
+            {
+                connected = false;
+                SetupSocket();
+            }
+            else
+            {
+                connected = true;
+                connectionStatus.color = Color.green;
 
+            }
         }
+       
     }
     public bool GetConnectionStatus(){
-        return connected;
+        if(toggleSwitch.GetComponent<ToggleController>().GetState() == true){
+            return connected;
+        }
+        else{
+            return false;
+        }
     }  
 
     public void Send(Byte[] sendBytes){
-        theStream = mySocket.GetStream();
-        try
-        {
-            theStream.Write(sendBytes, 0, sendBytes.Length);
-        }
-        catch (SocketException e )
-        {
-            Debug.Log("socket error");
-
+        if(toggleSwitch.GetComponent<ToggleController>().GetState() == true){
+            theStream = mySocket.GetStream();
+            try
+            {
+                theStream.Write(sendBytes, 0, sendBytes.Length);
+            }
+            catch (SocketException e )
+            {
+                Debug.Log("socket error");
+            }
         }
     }
 

@@ -58,10 +58,6 @@ public class SendData : MonoBehaviour
 }
 
 
-
-
-
-
 [Serializable]
 public class ControllerValue
 {
