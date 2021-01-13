@@ -2,15 +2,13 @@
 using System.IO;
 using System.Net.Sockets;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine.UI;
-using UnityEngine.Analytics;
-using UnityEngine.InputSystem;
 
 public class NetworkManager : MonoBehaviour
 {
+    private static  NetworkManager _instance;
+    public static NetworkManager Instance{get{return _instance;}}
+
     public String Host = "raspberrypi.local"; // 127.0.0.0 -- 127.0.0.1 = localhost
     public Int32 Port = 55000;
        
@@ -21,7 +19,11 @@ public class NetworkManager : MonoBehaviour
     bool connected;
     public GameObject toggleSwitch;
   
-
+    public void Awake(){
+        if(_instance == null){
+            _instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     public void Start()

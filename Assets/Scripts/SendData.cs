@@ -10,14 +10,12 @@ using UnityEngine.Analytics;
 using UnityEngine.InputSystem;
 public class SendData : MonoBehaviour
 {
-    NetworkManager myNetworkManager;
     RemoteController controller;
     ControllerValue controllerValue = new ControllerValue();
 
 
     void Awake()
     {
-        myNetworkManager = new NetworkManager();
         controller = new RemoteController();
         controller.CameraVideo.PixyLight.performed += ctx => controllerValue.pixyLight = true;
         controller.CameraVideo.PixyLight.canceled += ctx => controllerValue.pixyLight = false;
@@ -32,13 +30,13 @@ public class SendData : MonoBehaviour
 
     void Start()
     {
-        myNetworkManager.Start();
+        NetworkManager.Instance.Start();
     }
 
     void Update()
     {
-        myNetworkManager.Update();
-        if(myNetworkManager.GetConnectionStatus() == true){
+        NetworkManager.Instance.Update();
+        if(NetworkManager.Instance.GetConnectionStatus() == true){
             Send();
         }
         
@@ -48,7 +46,7 @@ public class SendData : MonoBehaviour
         string json = JsonUtility.ToJson(controllerValue);
         Byte[] sendBytes = System.Text.Encoding.UTF8.GetBytes(json);
         try{
-            myNetworkManager.Send(sendBytes);
+            NetworkManager.Instance.Send(sendBytes);
         }
         catch (SocketException e)
         {
