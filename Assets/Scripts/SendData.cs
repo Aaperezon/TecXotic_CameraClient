@@ -30,15 +30,22 @@ public class SendData : MonoBehaviour
 
     void Start()
     {
-        //NetworkManager.Instance.Start();
     }
 
     void Update()
     {
-        //NetworkManager.Instance.Update();
-        if(NetworkManager.Instance.GetConnectionStatus() == true){
-            Send();
+        try{
+            if(NetworkManager.Instance.GetConnectionStatus() == true){
+                Send();
+            }
         }
+        catch(NullReferenceException e){
+
+        }
+        catch(Exception e){
+           Debug.Log(e); 
+        }
+       
         
     }
     void Send()

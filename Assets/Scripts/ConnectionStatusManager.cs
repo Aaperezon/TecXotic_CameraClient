@@ -9,21 +9,12 @@ using System.Threading;
 using System.Collections.Generic;
 public class ConnectionStatusManager : MonoBehaviour
 {
-   
-       
-    private Image connectionStatus;
-    private bool connected;
     public GameObject toggleSwitch;
   
-    
- 
     // Start is called before the first frame update
     public void Start()
     {
-        connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
-        connectionStatus.color = Color.red;
 
-        
     }
     
 
@@ -31,9 +22,9 @@ public class ConnectionStatusManager : MonoBehaviour
     public void Update()
     {
         if(toggleSwitch.GetComponent<ToggleController>().GetState() == true){
-           this.GetComponent<NetworkManager>().enabled = true;
+            this.GetComponent<NetworkManager>().enabled = true;
         }else{
-           this.GetComponent<NetworkManager>().enabled = false;
+            this.GetComponent<NetworkManager>().enabled = false;
         }
        
     }

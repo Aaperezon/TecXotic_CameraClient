@@ -10,10 +10,18 @@ public class ReceiveData : MonoBehaviour
     }
 
     void Update()
-    {
-        if(NetworkManager.Instance.GetConnectionStatus() == true){
-            GetReading();
+    {   
+        /*
+        try{
+            if(NetworkManager.Instance.GetConnectionStatus() == true){
+                GetReading();
+            }
         }
+        catch(Exception e){
+            Debug.Log(e);
+        }
+        */
+       
         
     }
 

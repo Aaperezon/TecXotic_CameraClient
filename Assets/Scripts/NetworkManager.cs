@@ -16,21 +16,18 @@ public class NetworkManager : MonoBehaviour
 
     public String Host = "raspberrypi.local"; // 127.0.0.0 -- 127.0.0.1 = localhost
     public Int32 Port = 55000;
-       
     private static TcpClient mySocket = null;
     private static NetworkStream theStream = null;
     private static Image connectionStatus;
-    private bool connected;
     public GameObject toggleSwitch;
   
-    public void Awake(){
-        if(_instance == null){
-            _instance = this;
-        }
-    }
 
     void OnEnable()
     {
+        if(_instance == null){
+            _instance = this;
+        }
+
         Debug.Log("Setting up network...");
         String message = "";
         connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
@@ -47,6 +44,8 @@ public class NetworkManager : MonoBehaviour
         }
         catch (Exception e)
         {
+            Debug.Log(e);
+
             message+="Connection NOT ready to write";
 
         }
@@ -117,18 +116,30 @@ public class NetworkManager : MonoBehaviour
     void OnDisable()
     {
         if (mySocket != null && mySocket.Connected)
+        {
             mySocket.Close();
             Debug.Log("Connection ended...");
             connectionStatus.color = Color.red;
+            
+        }
+
+        if(_instance != null){
+            _instance = null;
+        }
+        
 
     }
 
     void OnApplicationQuit()
     {
-        if (mySocket != null && mySocket.Connected)
+        if (mySocket != null && mySocket.Connected){
             mySocket.Close();
             Debug.Log("Connection closed...");
             
+        }
+        if(_instance != null){
+            _instance = null;
+        }
 
     }
    
