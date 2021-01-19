@@ -45,12 +45,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstCustomPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstCustomTexture.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkTexture.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GStreamerCore.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\IGstPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\NativeDLL.cs" />
+     <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest0.cs" />
+     <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest1.cs" />
      <Compile Include="Assets\RemoteController.cs" />
      <Compile Include="Assets\Scripts\ConnectionStatusManager.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\ReceiveData.cs" />
      <Compile Include="Assets\Scripts\SendData.cs" />
      <Compile Include="Assets\Scripts\ToggleController.cs" />
+     <Compile Include="Assets\Scripts\UnityThread.cs" />
+     <Compile Include="Assets\Scripts\VideoStreamReader.cs" />
      <Compile Include="Assets\Scripts\WebCamVideo.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
