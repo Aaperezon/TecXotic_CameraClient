@@ -45,13 +45,38 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\GStreamerUnity\Components\BaseVideoPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\CameraCapture.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\CustomPipelinePlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\CustomSBSPipelinePlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\CustomVideoStreamer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\FileVideoPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\LocalCameraVideoPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Components\NetworkVideoPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\Dependency.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\FrameCounterHelper.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstBaseTexture.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\GstCustomPlayer.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\GstCustomTexture.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstCustomVideoStreamer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstImageInfo.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstMultipleNetworkVideoPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkAudioPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkAudioStreamer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkImageStreamer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkMultipleTexture.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkPlayer.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\GstNetworkTexture.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\GStreamerCore.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\GstUnityImageGrabber.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\IGstAudioPlayer.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\IGstPlayer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\IGstStreamer.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\IImageProcessor.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\ImageSampler.cs" />
      <Compile Include="Assets\GStreamerUnity\Scripts\NativeDLL.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\OffscreenProcessor.cs" />
+     <Compile Include="Assets\GStreamerUnity\Scripts\ThreadJob.cs" />
      <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest0.cs" />
      <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest1.cs" />
      <Compile Include="Assets\RemoteController.cs" />
@@ -105,6 +130,7 @@
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+     <None Include="Assets\GStreamerUnity\Resources\I420ToRGB.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />

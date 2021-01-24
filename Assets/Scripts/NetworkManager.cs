@@ -29,37 +29,36 @@ public class NetworkManager : MonoBehaviour
         }
 
         Debug.Log("Setting up network...");
-        String message = "";
         connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
         connectionStatus.color = Color.red;
         mySocket = new TcpClient();
         //SET UP SOCKET CONNECTION
-        try
-        {
-            mySocket.Connect(Host, Port);
-            theStream = mySocket.GetStream();
-            connectionStatus.color = Color.green;
-            message+="Connection ready to write";
+        while(mySocket.Connected == false){
+            try
+            {
+                mySocket.Connect(Host, Port);
+                theStream = mySocket.GetStream();
+                connectionStatus.color = Color.green;
 
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+                Debug.Log("Couldn't connect, retrying...");
+
+
+            }
+            try {  			
+                clientReceiveThread = new Thread (new ThreadStart(Receive)); 			
+                clientReceiveThread.IsBackground = true; 			
+                clientReceiveThread.Start();  
+            } 		
+            catch (Exception e) { 			
+            } 
         }
-        catch (Exception e)
-        {
-            Debug.Log(e);
+        
+       	
 
-            message+="Connection NOT ready to write";
-
-        }
-        try {  			
-			clientReceiveThread = new Thread (new ThreadStart(Receive)); 			
-			clientReceiveThread.IsBackground = true; 			
-			clientReceiveThread.Start();  
-            message+=" and ready to read";
-		} 		
-		catch (Exception e) { 			
-            message+=" and NOT ready to read";
-		} 	
-
-        Debug.Log(message);
 
 
     }

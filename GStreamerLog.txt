@@ -1,0 +1,41 @@
+mray_gstreamer_initialize
+Initializing GStreamer Engine
+Initializing GStreamer Engine - Done
+Initializing GStreamer
+GStreamerCore - Registering Elements!
+GStreamerCore - GStreamer inited
+Initializing GStreamer - Done
+Entering main loop
+Error: GstCustomVideoPlayer: Pipeline error:empty pipeline not allowed
+Error: GstCustomVideoPlayer: Pipeline error:empty pipeline not allowed
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
