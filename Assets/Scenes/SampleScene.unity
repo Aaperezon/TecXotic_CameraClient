@@ -953,7 +953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a834999e669ca74488201eac4af5b772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Host: raspberrypi.local
+  Host: 192.168.2.2
   Port: 55000
   toggleSwitch: {fileID: 1338414515}
 --- !u!1001 &1834177359
