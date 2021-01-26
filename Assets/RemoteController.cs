@@ -38,6 +38,17 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""action"": ""PixyLight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3828b83-06e8-40b7-a173-00e6088ab62b"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixyLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
