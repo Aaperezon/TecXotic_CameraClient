@@ -17,15 +17,32 @@ public class SendData : MonoBehaviour
     void Awake()
     {
         controller = new RemoteController();
-        controller.CameraVideo.PixyLight.performed += ctx => controllerValue.pixyLight = true;
-        controller.CameraVideo.PixyLight.canceled += ctx => controllerValue.pixyLight = false;
+
+        controller.Controller.ArmDisarm.performed += ctx => controllerValue.arm_disarm = true;
+        controller.Controller.ArmDisarm.canceled += ctx => controllerValue.arm_disarm = false;
+
+        controller.Controller.PixyLight.performed += ctx => controllerValue.pixyLight = true;
+        controller.Controller.PixyLight.canceled += ctx => controllerValue.pixyLight = false;
+
+        controller.Controller.Throttle.performed += ctx => controllerValue.throttle = (int)(ctx.ReadValue<float>()*500)+500;
+        controller.Controller.Throttle.canceled += ctx => controllerValue.throttle = 500;
+
+        controller.Controller.Pitch.performed += ctx => controllerValue.pitch = (int)(ctx.ReadValue<float>()*1000);
+        controller.Controller.Pitch.canceled += ctx => controllerValue.pitch = 0;
+
+        controller.Controller.Roll.performed += ctx => controllerValue.roll = (int)(ctx.ReadValue<float>()*1000);
+        controller.Controller.Roll.canceled += ctx => controllerValue.roll = 0;
+
+        controller.Controller.Yaw.performed += ctx => controllerValue.yaw = (int)(ctx.ReadValue<float>()*1000);
+        controller.Controller.Yaw.canceled += ctx => controllerValue.yaw = 0;
+
     }
 
     void OnEnable(){
-        controller.CameraVideo.Enable();
+        controller.Controller.Enable();
     }
      void OnDisable(){
-        controller.CameraVideo.Disable();
+        controller.Controller.Disable();
     }
 
     void Start()
@@ -66,6 +83,11 @@ public class SendData : MonoBehaviour
 [Serializable]
 public class ControllerValue
 {
-    public string Name;
-    public bool pixyLight = false;
+    public bool arm_disarm;
+    public int throttle = 500;
+    public int roll;
+    public int pitch;
+    public int yaw;
+    public bool pixyLight;
+
 }

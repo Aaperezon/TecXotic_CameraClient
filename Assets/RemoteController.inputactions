@@ -2,7 +2,7 @@
     "name": "RemoteController",
     "maps": [
         {
-            "name": "CameraVideo",
+            "name": "Controller",
             "id": "bf238e4b-b752-4559-b7df-8c2d2c2434a3",
             "actions": [
                 {
@@ -12,13 +12,53 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Throttle",
+                    "type": "Value",
+                    "id": "e82b71f9-374c-4fe0-b7d2-507c3678a3e7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Pitch",
+                    "type": "Value",
+                    "id": "4463c0b6-4141-4f1b-bb93-a87c8fa64daa",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Roll",
+                    "type": "Value",
+                    "id": "502a4b44-d099-49be-86af-c94d260bd6d7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Yaw",
+                    "type": "Value",
+                    "id": "f51db970-56ab-4b4b-92f8-f01066a8987f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ArmDisarm",
+                    "type": "Button",
+                    "id": "70d2317a-3b66-425e-86a2-a57686f4453d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "79fc90ad-46ed-4a61-8915-afbaffda95e9",
-                    "path": "<DualShockGamepad>/touchpadButton",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -28,12 +68,56 @@
                 },
                 {
                     "name": "",
-                    "id": "d3828b83-06e8-40b7-a173-00e6088ab62b",
-                    "path": "",
+                    "id": "f85c3239-f8d4-4469-92ed-93e433d3eb84",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PixyLight",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf2f145e-4edd-45da-97c6-f99eb72bfb82",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3456b90-6e34-4a69-8cbc-d52f9ccc3fd1",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f05ee067-c16b-4c1c-9ec4-ab17bcb2357f",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9edc1666-9958-46b8-8bc4-34a0208f0337",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/button11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArmDisarm",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -15,7 +15,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
     ""name"": ""RemoteController"",
     ""maps"": [
         {
-            ""name"": ""CameraVideo"",
+            ""name"": ""Controller"",
             ""id"": ""bf238e4b-b752-4559-b7df-8c2d2c2434a3"",
             ""actions"": [
                 {
@@ -25,13 +25,53 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Throttle"",
+                    ""type"": ""Value"",
+                    ""id"": ""e82b71f9-374c-4fe0-b7d2-507c3678a3e7"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pitch"",
+                    ""type"": ""Value"",
+                    ""id"": ""4463c0b6-4141-4f1b-bb93-a87c8fa64daa"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Roll"",
+                    ""type"": ""Value"",
+                    ""id"": ""502a4b44-d099-49be-86af-c94d260bd6d7"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Yaw"",
+                    ""type"": ""Value"",
+                    ""id"": ""f51db970-56ab-4b4b-92f8-f01066a8987f"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ArmDisarm"",
+                    ""type"": ""Button"",
+                    ""id"": ""70d2317a-3b66-425e-86a2-a57686f4453d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""79fc90ad-46ed-4a61-8915-afbaffda95e9"",
-                    ""path"": ""<DualShockGamepad>/touchpadButton"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/button5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -41,12 +81,56 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d3828b83-06e8-40b7-a173-00e6088ab62b"",
-                    ""path"": """",
+                    ""id"": ""f85c3239-f8d4-4469-92ed-93e433d3eb84"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PixyLight"",
+                    ""action"": ""Throttle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf2f145e-4edd-45da-97c6-f99eb72bfb82"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/stick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3456b90-6e34-4a69-8cbc-d52f9ccc3fd1"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/stick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f05ee067-c16b-4c1c-9ec4-ab17bcb2357f"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/rz"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9edc1666-9958-46b8-8bc4-34a0208f0337"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/button11"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArmDisarm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -55,9 +139,14 @@ public class @RemoteController : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // CameraVideo
-        m_CameraVideo = asset.FindActionMap("CameraVideo", throwIfNotFound: true);
-        m_CameraVideo_PixyLight = m_CameraVideo.FindAction("PixyLight", throwIfNotFound: true);
+        // Controller
+        m_Controller = asset.FindActionMap("Controller", throwIfNotFound: true);
+        m_Controller_PixyLight = m_Controller.FindAction("PixyLight", throwIfNotFound: true);
+        m_Controller_Throttle = m_Controller.FindAction("Throttle", throwIfNotFound: true);
+        m_Controller_Pitch = m_Controller.FindAction("Pitch", throwIfNotFound: true);
+        m_Controller_Roll = m_Controller.FindAction("Roll", throwIfNotFound: true);
+        m_Controller_Yaw = m_Controller.FindAction("Yaw", throwIfNotFound: true);
+        m_Controller_ArmDisarm = m_Controller.FindAction("ArmDisarm", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -104,40 +193,85 @@ public class @RemoteController : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // CameraVideo
-    private readonly InputActionMap m_CameraVideo;
-    private ICameraVideoActions m_CameraVideoActionsCallbackInterface;
-    private readonly InputAction m_CameraVideo_PixyLight;
-    public struct CameraVideoActions
+    // Controller
+    private readonly InputActionMap m_Controller;
+    private IControllerActions m_ControllerActionsCallbackInterface;
+    private readonly InputAction m_Controller_PixyLight;
+    private readonly InputAction m_Controller_Throttle;
+    private readonly InputAction m_Controller_Pitch;
+    private readonly InputAction m_Controller_Roll;
+    private readonly InputAction m_Controller_Yaw;
+    private readonly InputAction m_Controller_ArmDisarm;
+    public struct ControllerActions
     {
         private @RemoteController m_Wrapper;
-        public CameraVideoActions(@RemoteController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PixyLight => m_Wrapper.m_CameraVideo_PixyLight;
-        public InputActionMap Get() { return m_Wrapper.m_CameraVideo; }
+        public ControllerActions(@RemoteController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PixyLight => m_Wrapper.m_Controller_PixyLight;
+        public InputAction @Throttle => m_Wrapper.m_Controller_Throttle;
+        public InputAction @Pitch => m_Wrapper.m_Controller_Pitch;
+        public InputAction @Roll => m_Wrapper.m_Controller_Roll;
+        public InputAction @Yaw => m_Wrapper.m_Controller_Yaw;
+        public InputAction @ArmDisarm => m_Wrapper.m_Controller_ArmDisarm;
+        public InputActionMap Get() { return m_Wrapper.m_Controller; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CameraVideoActions set) { return set.Get(); }
-        public void SetCallbacks(ICameraVideoActions instance)
+        public static implicit operator InputActionMap(ControllerActions set) { return set.Get(); }
+        public void SetCallbacks(IControllerActions instance)
         {
-            if (m_Wrapper.m_CameraVideoActionsCallbackInterface != null)
+            if (m_Wrapper.m_ControllerActionsCallbackInterface != null)
             {
-                @PixyLight.started -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnPixyLight;
-                @PixyLight.performed -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnPixyLight;
-                @PixyLight.canceled -= m_Wrapper.m_CameraVideoActionsCallbackInterface.OnPixyLight;
+                @PixyLight.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPixyLight;
+                @PixyLight.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPixyLight;
+                @PixyLight.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPixyLight;
+                @Throttle.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnThrottle;
+                @Throttle.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnThrottle;
+                @Throttle.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnThrottle;
+                @Pitch.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPitch;
+                @Pitch.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPitch;
+                @Pitch.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPitch;
+                @Roll.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnRoll;
+                @Roll.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnRoll;
+                @Roll.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnRoll;
+                @Yaw.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnYaw;
+                @Yaw.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnYaw;
+                @Yaw.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnYaw;
+                @ArmDisarm.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnArmDisarm;
+                @ArmDisarm.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnArmDisarm;
+                @ArmDisarm.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnArmDisarm;
             }
-            m_Wrapper.m_CameraVideoActionsCallbackInterface = instance;
+            m_Wrapper.m_ControllerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @PixyLight.started += instance.OnPixyLight;
                 @PixyLight.performed += instance.OnPixyLight;
                 @PixyLight.canceled += instance.OnPixyLight;
+                @Throttle.started += instance.OnThrottle;
+                @Throttle.performed += instance.OnThrottle;
+                @Throttle.canceled += instance.OnThrottle;
+                @Pitch.started += instance.OnPitch;
+                @Pitch.performed += instance.OnPitch;
+                @Pitch.canceled += instance.OnPitch;
+                @Roll.started += instance.OnRoll;
+                @Roll.performed += instance.OnRoll;
+                @Roll.canceled += instance.OnRoll;
+                @Yaw.started += instance.OnYaw;
+                @Yaw.performed += instance.OnYaw;
+                @Yaw.canceled += instance.OnYaw;
+                @ArmDisarm.started += instance.OnArmDisarm;
+                @ArmDisarm.performed += instance.OnArmDisarm;
+                @ArmDisarm.canceled += instance.OnArmDisarm;
             }
         }
     }
-    public CameraVideoActions @CameraVideo => new CameraVideoActions(this);
-    public interface ICameraVideoActions
+    public ControllerActions @Controller => new ControllerActions(this);
+    public interface IControllerActions
     {
         void OnPixyLight(InputAction.CallbackContext context);
+        void OnThrottle(InputAction.CallbackContext context);
+        void OnPitch(InputAction.CallbackContext context);
+        void OnRoll(InputAction.CallbackContext context);
+        void OnYaw(InputAction.CallbackContext context);
+        void OnArmDisarm(InputAction.CallbackContext context);
     }
 }
