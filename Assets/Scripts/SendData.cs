@@ -36,6 +36,9 @@ public class SendData : MonoBehaviour
         controller.Controller.Yaw.performed += ctx => controllerValue.yaw = (int)(ctx.ReadValue<float>()*1000);
         controller.Controller.Yaw.canceled += ctx => controllerValue.yaw = 0;
 
+        controller.Controller.FlightMode.performed += ctx => controllerValue.flight_mode = true;
+        controller.Controller.FlightMode.canceled += ctx => controllerValue.flight_mode = false;
+        
     }
 
     void OnEnable(){
@@ -89,5 +92,6 @@ public class ControllerValue
     public int pitch;
     public int yaw;
     public bool pixyLight;
+    public bool flight_mode;
 
 }

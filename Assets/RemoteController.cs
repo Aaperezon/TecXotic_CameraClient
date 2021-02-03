@@ -65,6 +65,14 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""FlightMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""103e1b5d-79c7-4642-85fc-79384eaffbc6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -133,6 +141,17 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""action"": ""ArmDisarm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90c0ca69-32ba-48c5-af6a-e0c7335cb67e"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlightMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -147,6 +166,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
         m_Controller_Roll = m_Controller.FindAction("Roll", throwIfNotFound: true);
         m_Controller_Yaw = m_Controller.FindAction("Yaw", throwIfNotFound: true);
         m_Controller_ArmDisarm = m_Controller.FindAction("ArmDisarm", throwIfNotFound: true);
+        m_Controller_FlightMode = m_Controller.FindAction("FlightMode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -202,6 +222,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
     private readonly InputAction m_Controller_Roll;
     private readonly InputAction m_Controller_Yaw;
     private readonly InputAction m_Controller_ArmDisarm;
+    private readonly InputAction m_Controller_FlightMode;
     public struct ControllerActions
     {
         private @RemoteController m_Wrapper;
@@ -212,6 +233,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
         public InputAction @Roll => m_Wrapper.m_Controller_Roll;
         public InputAction @Yaw => m_Wrapper.m_Controller_Yaw;
         public InputAction @ArmDisarm => m_Wrapper.m_Controller_ArmDisarm;
+        public InputAction @FlightMode => m_Wrapper.m_Controller_FlightMode;
         public InputActionMap Get() { return m_Wrapper.m_Controller; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -239,6 +261,9 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @ArmDisarm.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnArmDisarm;
                 @ArmDisarm.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnArmDisarm;
                 @ArmDisarm.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnArmDisarm;
+                @FlightMode.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
+                @FlightMode.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
+                @FlightMode.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
             }
             m_Wrapper.m_ControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -261,6 +286,9 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @ArmDisarm.started += instance.OnArmDisarm;
                 @ArmDisarm.performed += instance.OnArmDisarm;
                 @ArmDisarm.canceled += instance.OnArmDisarm;
+                @FlightMode.started += instance.OnFlightMode;
+                @FlightMode.performed += instance.OnFlightMode;
+                @FlightMode.canceled += instance.OnFlightMode;
             }
         }
     }
@@ -273,5 +301,6 @@ public class @RemoteController : IInputActionCollection, IDisposable
         void OnRoll(InputAction.CallbackContext context);
         void OnYaw(InputAction.CallbackContext context);
         void OnArmDisarm(InputAction.CallbackContext context);
+        void OnFlightMode(InputAction.CallbackContext context);
     }
 }
