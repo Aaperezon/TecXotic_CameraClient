@@ -20,6 +20,7 @@ public class NetworkManager : MonoBehaviour
     private static NetworkStream theStream = null;
     private static Image connectionStatus;
     public GameObject toggleSwitch;
+    private static ReceivedValue receivedJSON;
   
 
     void OnEnable()
@@ -28,10 +29,12 @@ public class NetworkManager : MonoBehaviour
             _instance = this;
         }
 
+
         Debug.Log("Setting up network...");
         String message = "";
         connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
         connectionStatus.color = Color.red;
+        receivedJSON = new ReceivedValue();
         mySocket = new TcpClient();
         //SET UP SOCKET CONNECTION
         try
@@ -98,8 +101,12 @@ public class NetworkManager : MonoBehaviour
                         var incommingData = new byte[length]; 						
                         Array.Copy(bytes, 0, incommingData, 0, length); 						
                         // Convert byte array to string message. 						
-                        string serverMessage = Encoding.ASCII.GetString(incommingData); 						
-                        Debug.Log("server message received as: " + serverMessage); 					
+                        string serverMessage = Encoding.ASCII.GetString(incommingData); 
+                        //Debug.Log("server message received as: " + serverMessage); 					
+
+                        JsonUtility.FromJsonOverwrite(serverMessage, receivedJSON);
+
+
                     } 				
                 } 			
             }         
@@ -108,6 +115,10 @@ public class NetworkManager : MonoBehaviour
             Debug.Log("Socket exception: " + socketException);         
             Debug.Log("Error trying to read..." );         
         }  
+    }
+
+    public static ReceivedValue GetReceived(){
+        return receivedJSON;
     }
 
     
@@ -141,8 +152,17 @@ public class NetworkManager : MonoBehaviour
         }
 
     }
+    
    
 
   
 }
+[Serializable]
+    public class ReceivedValue
+    {
+        public int target_x;
+        public int target_y;
+        public int target_width;
+        public int target_height;
+    }
 
