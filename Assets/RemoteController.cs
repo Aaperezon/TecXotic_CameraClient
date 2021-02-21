@@ -73,6 +73,30 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ActivateClamp"",
+                    ""type"": ""Button"",
+                    ""id"": ""1146c9aa-199a-404c-9a6d-dd169fefdee2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeSub"",
+                    ""type"": ""Button"",
+                    ""id"": ""7749372a-3bf1-4a27-bdc9-51f994ea9482"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""cba9ec56-2867-4a0e-b45a-9e38698f345c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -152,6 +176,50 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""action"": ""FlightMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb682498-65d6-4aa1-b6d2-3fbf85115180"",
+                    ""path"": ""<XInputController>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateClamp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cecb9f0b-3643-4e17-a56b-c0bdc2c6d0eb"",
+                    ""path"": ""<XInputController>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSub"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab0060bb-182b-478d-8c82-4d8dcb33d182"",
+                    ""path"": ""<XInputController>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSub"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""022da403-e877-48d1-b1e7-3c5c47c078a9"",
+                    ""path"": ""<XInputController>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -167,6 +235,9 @@ public class @RemoteController : IInputActionCollection, IDisposable
         m_Controller_Yaw = m_Controller.FindAction("Yaw", throwIfNotFound: true);
         m_Controller_ArmDisarm = m_Controller.FindAction("ArmDisarm", throwIfNotFound: true);
         m_Controller_FlightMode = m_Controller.FindAction("FlightMode", throwIfNotFound: true);
+        m_Controller_ActivateClamp = m_Controller.FindAction("ActivateClamp", throwIfNotFound: true);
+        m_Controller_ChangeSub = m_Controller.FindAction("ChangeSub", throwIfNotFound: true);
+        m_Controller_Rotate = m_Controller.FindAction("Rotate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -223,6 +294,9 @@ public class @RemoteController : IInputActionCollection, IDisposable
     private readonly InputAction m_Controller_Yaw;
     private readonly InputAction m_Controller_ArmDisarm;
     private readonly InputAction m_Controller_FlightMode;
+    private readonly InputAction m_Controller_ActivateClamp;
+    private readonly InputAction m_Controller_ChangeSub;
+    private readonly InputAction m_Controller_Rotate;
     public struct ControllerActions
     {
         private @RemoteController m_Wrapper;
@@ -234,6 +308,9 @@ public class @RemoteController : IInputActionCollection, IDisposable
         public InputAction @Yaw => m_Wrapper.m_Controller_Yaw;
         public InputAction @ArmDisarm => m_Wrapper.m_Controller_ArmDisarm;
         public InputAction @FlightMode => m_Wrapper.m_Controller_FlightMode;
+        public InputAction @ActivateClamp => m_Wrapper.m_Controller_ActivateClamp;
+        public InputAction @ChangeSub => m_Wrapper.m_Controller_ChangeSub;
+        public InputAction @Rotate => m_Wrapper.m_Controller_Rotate;
         public InputActionMap Get() { return m_Wrapper.m_Controller; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +341,15 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @FlightMode.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
                 @FlightMode.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
                 @FlightMode.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
+                @ActivateClamp.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnActivateClamp;
+                @ActivateClamp.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnActivateClamp;
+                @ActivateClamp.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnActivateClamp;
+                @ChangeSub.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnChangeSub;
+                @ChangeSub.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnChangeSub;
+                @ChangeSub.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnChangeSub;
+                @Rotate.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnRotate;
+                @Rotate.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnRotate;
+                @Rotate.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnRotate;
             }
             m_Wrapper.m_ControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -289,6 +375,15 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @FlightMode.started += instance.OnFlightMode;
                 @FlightMode.performed += instance.OnFlightMode;
                 @FlightMode.canceled += instance.OnFlightMode;
+                @ActivateClamp.started += instance.OnActivateClamp;
+                @ActivateClamp.performed += instance.OnActivateClamp;
+                @ActivateClamp.canceled += instance.OnActivateClamp;
+                @ChangeSub.started += instance.OnChangeSub;
+                @ChangeSub.performed += instance.OnChangeSub;
+                @ChangeSub.canceled += instance.OnChangeSub;
+                @Rotate.started += instance.OnRotate;
+                @Rotate.performed += instance.OnRotate;
+                @Rotate.canceled += instance.OnRotate;
             }
         }
     }
@@ -302,5 +397,8 @@ public class @RemoteController : IInputActionCollection, IDisposable
         void OnYaw(InputAction.CallbackContext context);
         void OnArmDisarm(InputAction.CallbackContext context);
         void OnFlightMode(InputAction.CallbackContext context);
+        void OnActivateClamp(InputAction.CallbackContext context);
+        void OnChangeSub(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
     }
 }

@@ -38,7 +38,12 @@ public class SendData : MonoBehaviour
 
         controller.Controller.FlightMode.performed += ctx => controllerValue.flight_mode = true;
         controller.Controller.FlightMode.canceled += ctx => controllerValue.flight_mode = false;
-        
+
+        controller.Controller.ActivateClamp.performed += ctx => controllerValue.clamp = true;
+        controller.Controller.ActivateClamp.canceled += ctx => controllerValue.clamp = false;
+
+        controller.Controller.ChangeSub.performed += ctx => controllerValue.sub = true;
+        controller.Controller.ChangeSub.canceled += ctx => controllerValue.sub = false;
     }
 
     void OnEnable(){
@@ -93,5 +98,7 @@ public class ControllerValue
     public int yaw;
     public bool pixyLight;
     public bool flight_mode;
+    public bool clamp;
+    public bool sub;
 
 }
