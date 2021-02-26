@@ -6,11 +6,44 @@ GStreamerCore - Registering Elements!
 GStreamerCore - GStreamer inited
 Initializing GStreamer - Done
 Entering main loop
-Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
 Info: Checking is active
 mray_gstreamer_initialize
 Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 mray_gstreamer_initialize
 Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
+Info: Checking is active
+mray_gstreamer_initialize
 Info: Checking is active

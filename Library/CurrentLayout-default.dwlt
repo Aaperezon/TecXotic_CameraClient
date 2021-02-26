@@ -38,9 +38,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 848
+    x: 822
     y: 0
-    width: 660
+    width: 686
     height: 675
   m_MinSize: {x: 204, y: 222}
   m_MaxSize: {x: 4004, y: 4022}
@@ -209,7 +209,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 266
+    width: 265
     height: 675
   m_MinSize: {x: 202, y: 222}
   m_MaxSize: {x: 4002, y: 4022}
@@ -233,9 +233,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 266
+    x: 265
     y: 0
-    width: 582
+    width: 557
     height: 675
   m_MinSize: {x: 204, y: 222}
   m_MaxSize: {x: 4004, y: 4022}
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 272}
   m_MaxSize: {x: 14006, y: 10022}
   vertical: 0
-  controlID: 143
+  controlID: 145
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,9 +370,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1072
+    x: -1098
     y: 73
-    width: 658
+    width: 684
     height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_VSyncEnabled: 0
@@ -407,10 +407,10 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 658
+      width: 684
       height: 639
-    m_Scale: {x: 0.6425781, y: 0.6425781}
-    m_Translation: {x: 329, y: 319.5}
+    m_Scale: {x: 0.66796875, y: 0.66796875}
+    m_Translation: {x: 342, y: 319.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -418,14 +418,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -512
-      y: -497.21582
+      y: -478.3158
       width: 1024
-      height: 994.43164
+      height: 956.6316
     m_MinimalGUI: 1
-  m_defaultScale: 0.6425781
+  m_defaultScale: 0.66796875
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 658, y: 656}
+  m_LastWindowPixelSize: {x: 684, y: 656}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -453,15 +453,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: -1920
     y: 73
-    width: 266
+    width: 265
     height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6efbffff
+      m_SelectedIDs: a4380000
+      m_LastClickedID: 14500
+      m_ExpandedIDs: 6efbffff4e380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -506,9 +506,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1654
+    x: -1655
     y: 73
-    width: 580
+    width: 555
     height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -521,9 +521,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 244.5523, y: 457.334, z: 6.8692627}
+    m_Target: {x: -20.361023, y: 520.43823, z: -226}
     speed: 2
-    m_Value: {x: 244.5523, y: 457.334, z: 6.8692627}
+    m_Value: {x: -20.361023, y: 520.43823, z: -226}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.025178203, y: -0.02789338, z: -0.0006942506, w: -0.99930876}
+    m_Target: {x: 0.120108925, y: 0.15011017, z: -0.018408751, w: 0.9811988}
     speed: 2
-    m_Value: {x: 0.02517782, y: -0.027892955, z: -0.00069424, w: -0.9992935}
+    m_Value: {x: 0.120105974, y: 0.15010649, z: -0.018408298, w: 0.9811747}
   m_Size:
-    m_Target: 1529.1519
+    m_Target: 1630.3279
     speed: 2
-    m_Value: 1529.1519
+    m_Value: 1630.3279
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -840,19 +840,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\AaronPerezOntiveros\Documents\TecXotic\TecXoticController
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 3}
-    m_SelectedIDs: 72300000
-    m_LastClickedID: 12402
+    m_SelectedIDs: bc320000
+    m_LastClickedID: 12988
     m_ExpandedIDs: 0000000072300000f436000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

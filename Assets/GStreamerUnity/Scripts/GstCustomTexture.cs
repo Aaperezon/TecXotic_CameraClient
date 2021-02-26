@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading;
 
 public class GstCustomTexture : GstBaseTexture {
+	public string Port="";
 	public string Pipeline="";
 
 	private GstCustomPlayer _player;

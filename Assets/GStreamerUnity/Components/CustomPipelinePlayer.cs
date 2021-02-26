@@ -14,6 +14,7 @@ public class CustomPipelinePlayer : MonoBehaviour {
 
 	public string pipeline = "";
 
+
 	public Rect BlitRect=new Rect(0,0,1,1);
 	GstImageInfo _img;
 
@@ -24,7 +25,7 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	void Start () {
 		m_Texture = gameObject.GetComponent<GstCustomTexture>();
 		m_Texture.Initialize ();
-		m_Texture.SetPipeline (pipeline);  // pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
+		m_Texture.SetPipeline(pipeline);  // pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
 		m_Texture.Player.CreateStream ();
 		m_Texture.Player.Play ();
 
