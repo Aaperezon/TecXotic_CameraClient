@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Toggle Bg
+  - OnText
+  - Handle
+  - Off Text
+  - ArmedFlag
   layers:
   - Default
   - TransparentFX

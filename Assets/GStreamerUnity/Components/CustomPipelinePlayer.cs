@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(GstCustomTexture))]
 public class CustomPipelinePlayer : MonoBehaviour {
-
 	GstCustomTexture m_Texture;
 
 	public Texture2D BlittedImage;
@@ -13,7 +12,7 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	public Material TargetMaterial;
 
 	public string pipeline = "";
-
+	public string port = "";
 
 	public Rect BlitRect=new Rect(0,0,1,1);
 	GstImageInfo _img;
@@ -22,13 +21,30 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	public long duration;
 	bool _newFrame=false;
 	// Use this for initialization
+
 	void Start () {
+		GameObject parent = GameObject.Find("CameraManager");;
+		for(int i = 0; i< parent.transform.childCount; i++){
+			if(this.gameObject.name == ("VideoStream"+(i+1) ) ){
+				port = this.GetComponentInParent<CameraManager>().GetPorts()[i];
+			}
+
+		}
+
 		m_Texture = gameObject.GetComponent<GstCustomTexture>();
 		m_Texture.Initialize ();
-		m_Texture.SetPipeline(pipeline);  // pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
-		m_Texture.Player.CreateStream ();
+        //StartCoroutine(Dalay());
+		System.Threading.Thread.Sleep(100);
+		//pipeline = "udpsrc port="+port+" ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! appsink name=videoSink";
+		pipeline = "udpsrc port="+port+" ! application/x-rtp ! rtph264depay ! avdec_h264 ! videoconvert ! appsink name=videoSink";
+		m_Texture.SetPipeline(pipeline);  // 		pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
+        //StartCoroutine(Dalay());
+		System.Threading.Thread.Sleep(100);
+		m_Texture.Player.CreateStream();
+        //StartCoroutine(Dalay());
+		System.Threading.Thread.Sleep(100);
 		m_Texture.Player.Play ();
-
+	
 		m_Texture.OnFrameBlitted += OnFrameBlitted;
 		_img = new GstImageInfo ();
 		_img.Create (1, 1, GstImageInfo.EPixelFormat.EPixel_R8G8B8);
@@ -41,6 +57,10 @@ public class CustomPipelinePlayer : MonoBehaviour {
 		if(TargetMaterial!=null)
 			TargetMaterial.mainTexture=BlittedImage;
 	}
+	 IEnumerator Dalay()
+    {
+		        yield return new WaitForSeconds(3);
+    }
 	void OnFrameBlitted(GstBaseTexture src,int index)
 	{
 		//m_Texture.Player.CopyFrame (_img);
@@ -67,9 +87,17 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/*
+		string selectedCamera = CameraManager.GetInstance().GetSelection();
+		if(selectedCamera != actualCamera){
+			Initialize(selectedCamera);
+			Debug.Log ("New video...");
+
+		}
+		*/
+	
 		position=m_Texture.Player.GetPosition ()/1000;
 		duration=m_Texture.Player.GetDuration ()/1000;
-
 		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 			var p = (position - 5000) ;
 			if (p < 0)
@@ -87,5 +115,13 @@ public class CustomPipelinePlayer : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.P))
 			m_Texture.Play ();
+	}
+	void  OnApplicationQuit()
+	{
+		Debug.Log("Cerrando instancia de cámara");
+		m_Texture.Pause();
+		m_Texture.Stop();
+		m_Texture.Close();
+
 	}
 }

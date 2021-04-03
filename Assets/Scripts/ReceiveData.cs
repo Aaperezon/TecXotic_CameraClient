@@ -20,12 +20,13 @@ public class ReceiveData : MonoBehaviour
 
     void SetTarget(int target_x, int target_y, int target_width, int target_height){
 
-        //target_x = target_x-(target_width/2);
+        target_width = (int)(target_width * 2.33);
+        target_height = (int)(target_height * 1.85);
+        //target_x = target_x+(target_width/2);
         //target_y = target_y-(target_height/2);
-        target_x = (int)(2.33*target_x-350);
-        target_y = (int)(1.46*target_y-150)*-1;
-        target_width = target_width * 2;
-        target_height = target_height * 2;
+        target_x = (int)(2.33*target_x-390);  //355
+        target_y = (int)((1.85*target_y-210)*-1) ; //191
+      
         target.localPosition = new Vector3( target_x,  target_y, 0);
         target.localScale = new Vector3( target_width,  target_height, 1);
     }
