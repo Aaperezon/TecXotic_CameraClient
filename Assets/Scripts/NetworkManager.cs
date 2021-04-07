@@ -164,5 +164,6 @@ public class NetworkManager : MonoBehaviour
         public int target_y;
         public int target_width;
         public int target_height;
+        //public float pressure;
     }
 

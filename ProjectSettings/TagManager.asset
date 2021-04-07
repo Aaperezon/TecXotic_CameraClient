@@ -9,6 +9,9 @@ TagManager:
   - Handle
   - Off Text
   - ArmedFlag
+  - Undefined
+  - ModeTag
+  - TypeTag
   layers:
   - Default
   - TransparentFX
