@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Light_script : MonoBehaviour
 {
-    public GameObject lightParticle;
+    TMP_Text lightParticle;
 
     void Start(){
         lightParticle = gameObject.transform.Find("Pressure").GetComponent<TMP_Text>();
@@ -14,7 +15,7 @@ public class Light_script : MonoBehaviour
     
     void changeColor(bool state)
     {
-        if (lightOn)
+        if (state)
         {
             lightParticle.GetComponent<Image>().color = new Color32(180, 255, 0, 255);
         } else
