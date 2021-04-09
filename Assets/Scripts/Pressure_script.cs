@@ -12,7 +12,7 @@ public class Pressure_script : MonoBehaviour
     {
         pressureText = gameObject.transform.Find("Indicator").GetComponent<TMP_Text>();
     }
-    public void Set(float value){
+    public void Set(int value){
         pressureText.text = value.ToString();
     }
 

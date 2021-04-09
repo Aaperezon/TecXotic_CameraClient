@@ -4,32 +4,53 @@ using UnityEngine;
 using UnityEditor;
 public class ReceiveData : MonoBehaviour
 {
-    private Transform target;
+    GameObject armedIndicator;
+    GameObject flightMode;
+    GameObject pressureIndicator1;
+    GameObject clampIndicator;
+    GameObject lightIndicator;
+    GameObject pressureIndicator2;
+    ReceivedValue received;
     void Start()
     {
-        target=GameObject.Find("Target").GetComponent<Transform>();
+        armedIndicator = GameObject.Find("ArmedIndicator");
+        flightMode = GameObject.Find("FlightMode");
+        pressureIndicator1 = GameObject.Find("PressureIndicator1");
+        clampIndicator = GameObject.Find("ClampIndicator");
+        lightIndicator = GameObject.Find("LightIndicator");
+        pressureIndicator2 = GameObject.Find("PressureIndicator2");
     }
 
     void Update()
     {   
-        if(NetworkManager.GetReceived()!=null && target != null){
-            //Debug.Log("server message received as: "+NetworkManager.GetReceived().target_x); 
-            SetTarget(NetworkManager.GetReceived().target_x,  NetworkManager.GetReceived().target_y, NetworkManager.GetReceived().target_width,  NetworkManager.GetReceived().target_height);
+        received = NetworkManager.GetReceived();
+        
+        if(received != null){
+            /*
+            Debug.Log("server message received as: "
+            +received.arm_disarm+"  "
+            +received.flight_mode+"  "
+            +received.pressure+"  "
+            +received.clamp+"  "
+            +received.light+"  "
+            +received.throttle+"  "
+            +received.roll+"  "
+            +received.pitch+"  "
+            +received.yaw+"  "
+            ); 
+            */
+            armedIndicator.SendMessage("Set", received.arm_disarm);
+            pressureIndicator1.SendMessage("Set", received.pressure);
+            clampIndicator.SendMessage("Set", received.clamp);
+            //lightIndicator.SendMessage("Set", received.light);
+            pressureIndicator2.SendMessage("Set", received.pressure);
+            flightMode.SendMessage("Set", received.flight_mode);
+          
+          
         }
     }
 
-    void SetTarget(int target_x, int target_y, int target_width, int target_height){
-
-        target_width = (int)(target_width * 2.33);
-        target_height = (int)(target_height * 1.85);
-        //target_x = target_x+(target_width/2);
-        //target_y = target_y-(target_height/2);
-        target_x = (int)(2.33*target_x-390);  //355
-        target_y = (int)((1.85*target_y-210)*-1) ; //191
-      
-        target.localPosition = new Vector3( target_x,  target_y, 0);
-        target.localScale = new Vector3( target_width,  target_height, 1);
-    }
+   
 
     
 }

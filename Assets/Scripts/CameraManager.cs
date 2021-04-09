@@ -11,8 +11,8 @@ public class CameraManager : MonoBehaviour
     }
 
     public string[] ports = {"","","",""};
-    int frameX = 2 * 640;
-    int frameY = 2 * 360;
+    int frameX = (int)(3 * 640);
+    int frameY = (int)(3 * 360);
     int ocultarCamara;
     int mostrarCamara;
 

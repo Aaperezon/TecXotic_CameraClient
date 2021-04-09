@@ -21,8 +21,8 @@ public class SendData : MonoBehaviour
         controller.Controller.ArmDisarm.performed += ctx => controllerValue.arm_disarm = true;
         controller.Controller.ArmDisarm.canceled += ctx => controllerValue.arm_disarm = false;
 
-        controller.Controller.PixyLight.performed += ctx => controllerValue.pixyLight = true;
-        controller.Controller.PixyLight.canceled += ctx => controllerValue.pixyLight = false;
+        controller.Controller.PixyLight.performed += ctx => controllerValue.light = true;
+        controller.Controller.PixyLight.canceled += ctx => controllerValue.light = false;
 
         controller.Controller.Throttle.performed += ctx => controllerValue.throttle = (int)(ctx.ReadValue<float>()*500)+500;
         controller.Controller.Throttle.canceled += ctx => controllerValue.throttle = 500;
@@ -83,11 +83,15 @@ public class SendData : MonoBehaviour
 [Serializable]
 public class ControllerValue
 {
-    public bool arm_disarm;
+    public bool arm_disarm = false;
+    public int flight_mode = 0;
+    public bool light = false;
+
+
     public int throttle = 500;
-    public int roll;
-    public int pitch;
-    public int yaw;
-    public bool pixyLight;
+    public int roll = 0;
+    public int pitch = 0;
+    public int yaw = 0;
+
 
 }

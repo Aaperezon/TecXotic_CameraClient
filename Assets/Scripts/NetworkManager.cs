@@ -115,6 +115,7 @@ public class NetworkManager : MonoBehaviour
             Debug.Log("Socket exception: " + socketException);         
             Debug.Log("Error trying to read..." );         
         }  
+       
     }
 
     public static ReceivedValue GetReceived(){
@@ -160,10 +161,17 @@ public class NetworkManager : MonoBehaviour
 [Serializable]
     public class ReceivedValue
     {
-        public int target_x;
-        public int target_y;
-        public int target_width;
-        public int target_height;
-        //public float pressure;
+        public bool arm_disarm;
+        public string flight_mode;
+        public bool light;
+
+
+        public int throttle;
+        public int roll;
+        public int pitch;
+        public int yaw;
+
+        public int pressure;
+        public bool clamp;
     }
 

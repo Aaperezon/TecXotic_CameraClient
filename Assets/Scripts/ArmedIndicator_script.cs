@@ -8,9 +8,9 @@ public class ArmedIndicator_script : MonoBehaviour
     TMP_Text textArmed;
     void Start()
     {
-        textArmed = GameObject.Find("Indicator").GetComponent<TMP_Text>();
+        textArmed = gameObject.transform.Find("Indicator").GetComponent<TMP_Text>();
     }
-    public void ArmedFunction(bool armed)
+    public void Set(bool armed)
     {
         if(armed == true)
         {

@@ -16,9 +16,9 @@ public class Clamp_Script : MonoBehaviour
     {
         clampText = gameObject.transform.Find("Indicator").GetComponent<TMP_Text>();
     }
-    public void changeStatus(bool clamp)
+    public void Set(bool clamp)
     {
-        if (clamp)
+        if (clamp == true)
         {
             clampText.text = "Open";
             clampObject.GetComponent<Image>().color = new Color32(180, 255, 0, 250);
