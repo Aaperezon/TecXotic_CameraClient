@@ -13,17 +13,23 @@ public class CameraManager : MonoBehaviour
     public string[] ports = {"","","",""};
     int frameX = (int)(3 * 640);
     int frameY = (int)(3 * 360);
+    int width_screen = 3840/4;
+    int height_screen = 0;
     int ocultarCamara;
     int mostrarCamara;
+    (int, int) perspective1 = (1,3);
+    (int, int) perspective2 = (2,3);
+    (int, int) perspective3 = (0,3);
+    (int, int) perspective4 = (0,2);
 
     // Start is called before the first frame update
     void Start()
     {
         for(int i=0;i<this.gameObject.transform.childCount;i++){
             cameras[i] = this.gameObject.transform.GetChild(i);
-            mostrarCamara = (int)cameras[0].localPosition.z-2;
-            ocultarCamara = (int)cameras[0].localPosition.z+1;
-            cameras[i].localPosition = new Vector3(cameras[0].localPosition.x,cameras[0].localPosition.y, ocultarCamara);
+            mostrarCamara = -1;
+            ocultarCamara = 2;
+            cameras[i].localPosition = new Vector3(-width_screen, height_screen, ocultarCamara);
             cameras[i].localScale = new Vector3(frameX,frameY, 1);
         }
         if(cameraManager != null){
@@ -32,9 +38,8 @@ public class CameraManager : MonoBehaviour
         else{
             cameraManager = this;
         }
-        cameras[0].localPosition = new Vector3(cameras[0].localPosition.x,cameras[0].localPosition.y, mostrarCamara);
-
-       
+        cameras[1].localPosition = new Vector3(-width_screen,height_screen, mostrarCamara);
+        cameras[3].localPosition = new Vector3(width_screen,height_screen, mostrarCamara);
     }
     
 
@@ -42,42 +47,31 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1)){
-            for(int i = 0; i < this.gameObject.transform.childCount; i++){
-                if(i == 0){
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, mostrarCamara);
-                }else{
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, ocultarCamara);
-                }
-            }
+            ChangePerspective(perspective1);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2)){
-            for(int i = 0; i < this.gameObject.transform.childCount; i++){
-                if(i == 1){
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, mostrarCamara);
-                }else{
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, ocultarCamara);
-                }
-            }
+            ChangePerspective(perspective2);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha3)){
-           for(int i = 0; i < this.gameObject.transform.childCount; i++){
-                if(i == 2){
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, mostrarCamara);
-                }else{
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, ocultarCamara);
-                }
-            }
+            ChangePerspective(perspective3);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha4)){
-          for(int i = 0; i < this.gameObject.transform.childCount; i++){
-                if(i == 3){
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, mostrarCamara);
-                }else{
-                    cameras[i].localPosition = new Vector3(cameras[i].localPosition.x,cameras[i].localPosition.y, ocultarCamara);
-                }
+            ChangePerspective(perspective4);
+        }
+    }
+
+    private void ChangePerspective( (int a ,int b)perspective){
+        for(int i = 0;i<this.gameObject.transform.childCount;i++){
+            if(i == perspective.a ){
+                cameras[i].localPosition = new Vector3(-width_screen,height_screen, mostrarCamara);
+            }
+            else if (i == perspective.b){
+                cameras[i].localPosition = new Vector3(width_screen,height_screen, mostrarCamara);
+            }
+            else{
+                cameras[i].localPosition = new Vector3(width_screen,height_screen, ocultarCamara);
             }
         }
-        
     }
 
     public string[] GetPorts(){
