@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "FlightMode",
+                    "type": "Button",
+                    "id": "fa024a47-dab3-4049-971c-e45faa39a23a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -118,6 +126,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ArmDisarm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62955dca-90b0-4c0f-94b1-123dd6f8f327",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlightMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

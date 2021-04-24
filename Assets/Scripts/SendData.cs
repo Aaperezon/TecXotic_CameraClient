@@ -18,8 +18,11 @@ public class SendData : MonoBehaviour
     {
         controller = new RemoteController();
 
-        controller.Controller.ArmDisarm.performed += ctx => controllerValue.arm_disarm = true;
-        controller.Controller.ArmDisarm.canceled += ctx => controllerValue.arm_disarm = false;
+        controller.Controller.ArmDisarm.performed += ctx => controllerValue.arm_disarm = ChangeArmDisarm(true);
+        controller.Controller.ArmDisarm.canceled += ctx => controllerValue.arm_disarm = ChangeArmDisarm(false);
+
+        controller.Controller.FlightMode.performed += ctx => controllerValue.flight_mode = ChangeFlightMode(true);
+        controller.Controller.FlightMode.canceled += ctx => controllerValue.flight_mode = ChangeFlightMode(false);
 
         controller.Controller.PixyLight.performed += ctx => controllerValue.light = true;
         controller.Controller.PixyLight.canceled += ctx => controllerValue.light = false;
@@ -37,20 +40,61 @@ public class SendData : MonoBehaviour
         controller.Controller.Yaw.canceled += ctx => controllerValue.yaw = 0;
 
     }
+   
+   
+    bool button1Aux = false;
+    private int selectorFlightMode=-1;
+    private string[] flightModes = new string[]{"MANUAL","STABILIZE","ACRO"};
+    private string ChangeFlightMode(bool state){
+        if(state == true && button1Aux == false){
+            if(selectorFlightMode >= 2){
+                selectorFlightMode=-1;
+            }
+            selectorFlightMode++;
+            button1Aux = true;
+        }
+        else if (state == false){
+            button1Aux = false;
+        }
+        return flightModes[selectorFlightMode];
+        
+    }
+    bool button2Aux = false;
+    private bool[] armModes = new bool[]{true,false};
+    private int selectorarmMode=-1;
 
+
+    private bool ChangeArmDisarm(bool state){
+        if(state == true && button2Aux == false){
+            if(selectorFlightMode >= 1){
+                selectorFlightMode=-1;
+            }
+            selectorFlightMode++;
+            button2Aux = true;
+        }
+        else if (state == false){
+            button2Aux = false;
+        }
+        return armModes[selectorFlightMode];    
+    }
     void OnEnable(){
         controller.Controller.Enable();
     }
      void OnDisable(){
         controller.Controller.Disable();
     }
-
+    GameObject armedIndicator;
+    GameObject flightMode;
     void Start()
     {
+        armedIndicator = GameObject.Find("ArmedIndicator");
+        flightMode = GameObject.Find("FlightMode");
     }
-
+   
     void Update()
     {
+        //string json = JsonUtility.ToJson(controllerValue);
+        //Debug.Log(json);
         try{
             if(NetworkManager.Instance.GetConnectionStatus() == true){
                 Send();
@@ -62,8 +106,13 @@ public class SendData : MonoBehaviour
         catch(Exception e){
            Debug.Log(e); 
         }
-       
+        Indicators();
         
+    }
+
+    private void Indicators(){
+        armedIndicator.SendMessage("Set", controllerValue.arm_disarm);
+        flightMode.SendMessage("Set", controllerValue.flight_mode);
     }
     void Send()
     {
@@ -84,7 +133,7 @@ public class SendData : MonoBehaviour
 public class ControllerValue
 {
     public bool arm_disarm = false;
-    public int flight_mode = 0;
+    public string flight_mode = "MANUAL";
     public bool light = false;
 
 
