@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scripts\PixhawkConection_script.cs" />
      <Compile Include="Assets\Scripts\Pressure_script.cs" />
      <Compile Include="Assets\Scripts\ReceiveData.cs" />
+     <Compile Include="Assets\Scripts\ROV_Rotation.cs" />
      <Compile Include="Assets\Scripts\SendData.cs" />
      <Compile Include="Assets\Scripts\ToggleController.cs" />
      <Compile Include="Assets\Scripts\UnityThread.cs" />

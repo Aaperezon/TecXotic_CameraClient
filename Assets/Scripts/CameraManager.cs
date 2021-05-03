@@ -22,8 +22,8 @@ public class CameraManager : MonoBehaviour
     (int, int) perspective3 = (0,3);
     (int, int) perspective4 = (0,2);
 
-    // Start is called before the first frame update
-    void Start()
+    // Start is called before the first frame updates
+    void OnEnable()
     {
         for(int i=0;i<this.gameObject.transform.childCount;i++){
             cameras[i] = this.gameObject.transform.GetChild(i);

@@ -21,8 +21,7 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	public long duration;
 	bool _newFrame=false;
 	// Use this for initialization
-
-	void Start () {
+	void OnEnable(){
 		GameObject parent = GameObject.Find("CameraManager");;
 		for(int i = 0; i< parent.transform.childCount; i++){
 			if(this.gameObject.name == ("VideoStream"+(i+1) ) ){
@@ -116,7 +115,7 @@ public class CustomPipelinePlayer : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.P))
 			m_Texture.Play ();
 	}
-	void  OnApplicationQuit()
+	void  OnDisable()
 	{
 		Debug.Log("Cerrando instancia de cámara");
 		m_Texture.Pause();

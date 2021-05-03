@@ -12,6 +12,7 @@ TagManager:
   - Undefined
   - ModeTag
   - TypeTag
+  - CameraManager
   layers:
   - Default
   - TransparentFX
