@@ -26,6 +26,14 @@ public class CustomPipelinePlayer : MonoBehaviour {
 		for(int i = 0; i< parent.transform.childCount; i++){
 			if(this.gameObject.name == ("VideoStream"+(i+1) ) ){
 				port = this.GetComponentInParent<CameraManager>().GetPorts()[i];
+				int mjpegCamera = this.GetComponentInParent<CameraManager>().GetMJPEGCamera();
+				if(i == mjpegCamera){
+					pipeline = "udpsrc port="+port+" ! application/x-rtp,encoding-name=JPEG,payload=26 ! rtpjpegdepay ! jpegdec ! appsink name=videoSink";
+				}
+				else{
+					pipeline = "udpsrc port="+port+" ! application/x-rtp ! rtph264depay ! avdec_h264 ! videoconvert ! appsink name=videoSink";
+				}
+				
 			}
 
 		}
@@ -35,7 +43,6 @@ public class CustomPipelinePlayer : MonoBehaviour {
         //StartCoroutine(Dalay());
 		System.Threading.Thread.Sleep(100);
 		//pipeline = "udpsrc port="+port+" ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! appsink name=videoSink";
-		pipeline = "udpsrc port="+port+" ! application/x-rtp ! rtph264depay ! avdec_h264 ! videoconvert ! appsink name=videoSink";
 		m_Texture.SetPipeline(pipeline);  // 		pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
         //StartCoroutine(Dalay());
 		System.Threading.Thread.Sleep(100);

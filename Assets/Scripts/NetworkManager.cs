@@ -14,7 +14,7 @@ public class NetworkManager : MonoBehaviour
     private static Thread clientReceiveThread; 	
 
 
-    public String Host = "raspberrypi.local"; // 127.0.0.0 -- 127.0.0.1 = localhost
+    public String Host = "192.168.2.2"; // 127.0.0.0 -- 127.0.0.1 = localhost
     public Int32 Port = 55000;
     private static TcpClient mySocket = null;
     private static NetworkStream theStream = null;

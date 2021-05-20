@@ -45,7 +45,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Camera_Connect.cs" />
      <Compile Include="Assets\GStreamerUnity\Components\BaseVideoPlayer.cs" />
      <Compile Include="Assets\GStreamerUnity\Components\CameraCapture.cs" />
      <Compile Include="Assets\GStreamerUnity\Components\CustomPipelinePlayer.cs" />
@@ -82,7 +81,9 @@
      <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest1.cs" />
      <Compile Include="Assets\Panel_Script.cs" />
      <Compile Include="Assets\RemoteController.cs" />
+     <Compile Include="Assets\Scripts\ActiveColor.cs" />
      <Compile Include="Assets\Scripts\ArmedIndicator_script.cs" />
+     <Compile Include="Assets\Scripts\Camera_Connect.cs" />
      <Compile Include="Assets\Scripts\CameraManager.cs" />
      <Compile Include="Assets\Scripts\CameraToggle_Script.cs" />
      <Compile Include="Assets\Scripts\Clamp_Script.cs" />
@@ -97,6 +98,7 @@
      <Compile Include="Assets\Scripts\ROV_Rotation.cs" />
      <Compile Include="Assets\Scripts\SendData.cs" />
      <Compile Include="Assets\Scripts\ToggleController.cs" />
+     <Compile Include="Assets\Scripts\ToggleIndicator.cs" />
      <Compile Include="Assets\Scripts\UnityThread.cs" />
      <Compile Include="Assets\Scripts\UUVIndicator_script.cs" />
      <Compile Include="Assets\Scripts\VideoStreamReader.cs" />
