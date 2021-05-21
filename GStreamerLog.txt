@@ -7,7 +7,314 @@ GStreamerCore - GStreamer inited
 Initializing GStreamer - Done
 Entering main loop
 mray_gstreamer_initialize
-Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
 mray_gstreamer_initialize
 mray_gstreamer_initialize
 Info: Checking is active

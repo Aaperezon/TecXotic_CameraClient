@@ -73,6 +73,38 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Agent3_x"",
+                    ""type"": ""Value"",
+                    ""id"": ""beed1254-ee8f-4a18-bb97-87f4ae44dc44"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Agent3_y"",
+                    ""type"": ""Value"",
+                    ""id"": ""fd8a8788-0ad3-46d7-89a1-bd952d9f5e39"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Agent3_resize"",
+                    ""type"": ""Button"",
+                    ""id"": ""48aecdd1-6ef5-4d74-9373-065da22a3fd1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Agent3_shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""40321201-4799-41f1-a41f-30a4f8c507c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -152,6 +184,50 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""action"": ""FlightMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98b70a45-a3ac-4c9f-8ab4-b64cba0d9b7e"",
+                    ""path"": ""<DualShockGamepad>/rightStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Agent3_x"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f56333d-e51b-4251-a19d-1142c097eb14"",
+                    ""path"": ""<DualShockGamepad>/rightStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Agent3_y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""597136ab-621f-4a38-98f5-903245306a15"",
+                    ""path"": ""<DualShockGamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Agent3_resize"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""223249ef-ca00-4108-a75b-83340b569027"",
+                    ""path"": ""<DualShockGamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Agent3_shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -167,6 +243,10 @@ public class @RemoteController : IInputActionCollection, IDisposable
         m_Controller_Yaw = m_Controller.FindAction("Yaw", throwIfNotFound: true);
         m_Controller_ArmDisarm = m_Controller.FindAction("ArmDisarm", throwIfNotFound: true);
         m_Controller_FlightMode = m_Controller.FindAction("FlightMode", throwIfNotFound: true);
+        m_Controller_Agent3_x = m_Controller.FindAction("Agent3_x", throwIfNotFound: true);
+        m_Controller_Agent3_y = m_Controller.FindAction("Agent3_y", throwIfNotFound: true);
+        m_Controller_Agent3_resize = m_Controller.FindAction("Agent3_resize", throwIfNotFound: true);
+        m_Controller_Agent3_shoot = m_Controller.FindAction("Agent3_shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -223,6 +303,10 @@ public class @RemoteController : IInputActionCollection, IDisposable
     private readonly InputAction m_Controller_Yaw;
     private readonly InputAction m_Controller_ArmDisarm;
     private readonly InputAction m_Controller_FlightMode;
+    private readonly InputAction m_Controller_Agent3_x;
+    private readonly InputAction m_Controller_Agent3_y;
+    private readonly InputAction m_Controller_Agent3_resize;
+    private readonly InputAction m_Controller_Agent3_shoot;
     public struct ControllerActions
     {
         private @RemoteController m_Wrapper;
@@ -234,6 +318,10 @@ public class @RemoteController : IInputActionCollection, IDisposable
         public InputAction @Yaw => m_Wrapper.m_Controller_Yaw;
         public InputAction @ArmDisarm => m_Wrapper.m_Controller_ArmDisarm;
         public InputAction @FlightMode => m_Wrapper.m_Controller_FlightMode;
+        public InputAction @Agent3_x => m_Wrapper.m_Controller_Agent3_x;
+        public InputAction @Agent3_y => m_Wrapper.m_Controller_Agent3_y;
+        public InputAction @Agent3_resize => m_Wrapper.m_Controller_Agent3_resize;
+        public InputAction @Agent3_shoot => m_Wrapper.m_Controller_Agent3_shoot;
         public InputActionMap Get() { return m_Wrapper.m_Controller; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +352,18 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @FlightMode.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
                 @FlightMode.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
                 @FlightMode.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnFlightMode;
+                @Agent3_x.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_x;
+                @Agent3_x.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_x;
+                @Agent3_x.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_x;
+                @Agent3_y.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_y;
+                @Agent3_y.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_y;
+                @Agent3_y.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_y;
+                @Agent3_resize.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_resize;
+                @Agent3_resize.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_resize;
+                @Agent3_resize.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_resize;
+                @Agent3_shoot.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_shoot;
+                @Agent3_shoot.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_shoot;
+                @Agent3_shoot.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_shoot;
             }
             m_Wrapper.m_ControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -289,6 +389,18 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @FlightMode.started += instance.OnFlightMode;
                 @FlightMode.performed += instance.OnFlightMode;
                 @FlightMode.canceled += instance.OnFlightMode;
+                @Agent3_x.started += instance.OnAgent3_x;
+                @Agent3_x.performed += instance.OnAgent3_x;
+                @Agent3_x.canceled += instance.OnAgent3_x;
+                @Agent3_y.started += instance.OnAgent3_y;
+                @Agent3_y.performed += instance.OnAgent3_y;
+                @Agent3_y.canceled += instance.OnAgent3_y;
+                @Agent3_resize.started += instance.OnAgent3_resize;
+                @Agent3_resize.performed += instance.OnAgent3_resize;
+                @Agent3_resize.canceled += instance.OnAgent3_resize;
+                @Agent3_shoot.started += instance.OnAgent3_shoot;
+                @Agent3_shoot.performed += instance.OnAgent3_shoot;
+                @Agent3_shoot.canceled += instance.OnAgent3_shoot;
             }
         }
     }
@@ -302,5 +414,9 @@ public class @RemoteController : IInputActionCollection, IDisposable
         void OnYaw(InputAction.CallbackContext context);
         void OnArmDisarm(InputAction.CallbackContext context);
         void OnFlightMode(InputAction.CallbackContext context);
+        void OnAgent3_x(InputAction.CallbackContext context);
+        void OnAgent3_y(InputAction.CallbackContext context);
+        void OnAgent3_resize(InputAction.CallbackContext context);
+        void OnAgent3_shoot(InputAction.CallbackContext context);
     }
 }

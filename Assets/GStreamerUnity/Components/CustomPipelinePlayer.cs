@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
 [RequireComponent(typeof(GstCustomTexture))]
 public class CustomPipelinePlayer : MonoBehaviour {
 	GstCustomTexture m_Texture;
@@ -20,13 +20,21 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	public long position;
 	public long duration;
 	bool _newFrame=false;
-	// Use this for initialization
+
 	void OnEnable(){
-		GameObject parent = GameObject.Find("CameraManager");;
+		CameraPorts cameraports = CameraPanel.Load();
+		List<int> portSettings = new List<int>();
+		portSettings.Add(cameraports.camera1);
+		portSettings.Add(cameraports.camera2);
+		portSettings.Add(cameraports.camera3);
+		portSettings.Add(cameraports.camera4);
+		portSettings.Add(cameraports.idMiniROV);
+		//Debug.Log("El id está en la posicion: "+portSettings.Count);
+		GameObject parent = GameObject.Find("CameraManager");
 		for(int i = 0; i< parent.transform.childCount; i++){
 			if(this.gameObject.name == ("VideoStream"+(i+1) ) ){
-				port = this.GetComponentInParent<CameraManager>().GetPorts()[i];
-				int mjpegCamera = this.GetComponentInParent<CameraManager>().GetMJPEGCamera();
+				port = portSettings[i].ToString();
+				int mjpegCamera = portSettings[portSettings.Count-1];
 				if(i == mjpegCamera){
 					pipeline = "udpsrc port="+port+" ! application/x-rtp,encoding-name=JPEG,payload=26 ! rtpjpegdepay ! jpegdec ! appsink name=videoSink";
 				}
@@ -124,7 +132,7 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	}
 	void  OnDisable()
 	{
-		Debug.Log("Cerrando instancia de cámara");
+		//Debug.Log("Cerrando instancia de cámara");
 		m_Texture.Pause();
 		m_Texture.Stop();
 		m_Texture.Close();

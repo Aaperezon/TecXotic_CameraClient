@@ -10,9 +10,15 @@ using UnityEngine.Analytics;
 using UnityEngine.InputSystem;
 public class SendData : MonoBehaviour
 {
-    RemoteController controller;
-    ControllerValue controllerValue = new ControllerValue();
+    private static RemoteController controller;
+    private static ControllerValue controllerValue = new ControllerValue();
 
+    public static ControllerValue GetSender(){
+        return controllerValue;
+    }
+    public static RemoteController GetController(){
+        return controller;
+    }
 
     void Awake()
     {
@@ -66,16 +72,16 @@ public class SendData : MonoBehaviour
 
     private bool ChangeArmDisarm(bool state){
         if(state == true && button2Aux == false){
-            if(selectorFlightMode >= 1){
-                selectorFlightMode=-1;
+            if(selectorarmMode >= 1){
+                selectorarmMode=-1;
             }
-            selectorFlightMode++;
+            selectorarmMode++;
             button2Aux = true;
         }
         else if (state == false){
             button2Aux = false;
         }
-        return armModes[selectorFlightMode];    
+        return armModes[selectorarmMode];    
     }
     void OnEnable(){
         controller.Controller.Enable();
@@ -85,16 +91,26 @@ public class SendData : MonoBehaviour
     }
     GameObject armedIndicator;
     GameObject flightMode;
+    GameObject agent1;
+    GameObject agent2;
+    GameObject agent3;
+    GameObject agent4;
+    GameObject agent5;
     void Start()
     {
         armedIndicator = GameObject.Find("ArmedIndicator");
         flightMode = GameObject.Find("FlightMode");
+        agent1 = GameObject.Find("Agent1");
+        agent2 = GameObject.Find("Agent2");
+        agent3 = GameObject.Find("Agent3");
+        agent4 = GameObject.Find("Agent4");
+        agent5 = GameObject.Find("Agent5");
     }
    
     void Update()
     {
-        //string json = JsonUtility.ToJson(controllerValue);
-        //Debug.Log(json);
+        string json = JsonUtility.ToJson(controllerValue);
+        Debug.Log(json);
         try{
             if(NetworkManager.Instance.GetConnectionStatus() == true){
                 Send();
@@ -113,6 +129,11 @@ public class SendData : MonoBehaviour
     private void Indicators(){
         armedIndicator.SendMessage("Set", controllerValue.arm_disarm);
         flightMode.SendMessage("Set", controllerValue.flight_mode);
+        agent1.SendMessage("Set", controllerValue.activate_agent1);
+        agent2.SendMessage("Set", controllerValue.activate_agent2);
+        agent3.SendMessage("Set", controllerValue.activate_agent3);
+        agent4.SendMessage("Set", controllerValue.activate_agent4);
+        agent5.SendMessage("Set", controllerValue.activate_agent5);
     }
     void Send()
     {
@@ -142,5 +163,15 @@ public class ControllerValue
     public int pitch = 0;
     public int yaw = 0;
 
+    public int agent3_x = 0;
+    public int agent3_y = 0;
+    public float agent3_w = 200;
+    public float agent3_h = 150;
+    public bool agent3_shoot = false;
+    public bool activate_agent1 = false;
+    public bool activate_agent2 = false;
+    public bool activate_agent3 = true;
+    public bool activate_agent4 = false;
+    public bool activate_agent5 = false;
 
 }
