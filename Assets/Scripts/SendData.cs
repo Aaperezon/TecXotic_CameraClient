@@ -30,6 +30,47 @@ public class SendData : MonoBehaviour
         controller.Controller.FlightMode.performed += ctx => controllerValue.flight_mode = ChangeFlightMode(true);
         controller.Controller.FlightMode.canceled += ctx => controllerValue.flight_mode = ChangeFlightMode(false);
 
+        controller.Controller.CameraPitchUp.performed += ctx => controllerValue.pitch_camera = ChangePitchCamera(controllerValue.pitch_camera, 2);
+        controller.Controller.CameraPitchDown.performed += ctx => controllerValue.pitch_camera = ChangePitchCamera(controllerValue.pitch_camera, -2);
+        
+        controller.Controller.ConnectPixhawk.performed += ctx => controllerValue.connect_pixhawk = ChangeConnectPixhawk(true);
+        controller.Controller.ConnectPixhawk.canceled += ctx => controllerValue.connect_pixhawk = ChangeConnectPixhawk(false);
+
+        controller.Controller.MiniROV_forward.performed += ctx => {
+            pressed1 = true;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection("f");
+        };
+        controller.Controller.MiniROV_forward.canceled += ctx => {
+            pressed1 = false;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection(direction);
+        };
+        controller.Controller.MiniROV_backward.performed += ctx => {
+            pressed2 = true;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection("b");
+        };
+        controller.Controller.MiniROV_backward.canceled += ctx => {
+            pressed2 = false;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection(direction);
+        };
+        controller.Controller.MiniROV_left.performed += ctx =>{
+            pressed3 = true;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection("l");
+        };
+        controller.Controller.MiniROV_left.canceled += ctx => {
+            pressed3 = false;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection(direction);
+        };
+        controller.Controller.MiniROV_right.performed += ctx => {
+            pressed4 = true;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection("r");
+        };
+        controller.Controller.MiniROV_right.canceled += ctx => {
+            pressed4 = false;
+            controllerValue.miniROV_direction = ChangeMiniROVDirection(direction);
+        };
+
+
+
         controller.Controller.PixyLight.performed += ctx => controllerValue.light = true;
         controller.Controller.PixyLight.canceled += ctx => controllerValue.light = false;
 
@@ -45,6 +86,23 @@ public class SendData : MonoBehaviour
         controller.Controller.Yaw.performed += ctx => controllerValue.yaw = (int)(ctx.ReadValue<float>()*1000);
         controller.Controller.Yaw.canceled += ctx => controllerValue.yaw = 0;
 
+    }
+    private static bool pressed1 = false;
+    private static bool pressed2 = false;
+    private static bool pressed3 = false;
+    private static bool pressed4 = false;
+    private static string direction = "s";
+    private string ChangeMiniROVDirection(string input){
+        if(pressed1 == false && pressed2 == false && pressed3 == false && pressed4 == false){
+            return "s";
+        }else{
+            direction = input;
+            return direction;
+        }
+    }
+
+    private int ChangePitchCamera(int angle,int action){
+        return angle+action;
     }
    
    
@@ -83,6 +141,22 @@ public class SendData : MonoBehaviour
         }
         return armModes[selectorarmMode];    
     }
+    bool button3Aux = false;
+    private bool[] connectionState = new bool[]{true,false};
+    private int selectorconnectionState=-1;
+    private bool ChangeConnectPixhawk(bool state){
+        if(state == true && button3Aux == false){
+            if(selectorconnectionState >= 1){
+                selectorconnectionState=-1;
+            }
+            selectorconnectionState++;
+            button3Aux = true;
+        }
+        else if (state == false){
+            button3Aux = false;
+        }
+        return connectionState[selectorconnectionState];    
+    }
     void OnEnable(){
         controller.Controller.Enable();
     }
@@ -109,8 +183,8 @@ public class SendData : MonoBehaviour
    
     void Update()
     {
-        string json = JsonUtility.ToJson(controllerValue);
-        Debug.Log(json);
+        //string json = JsonUtility.ToJson(controllerValue);
+        //Debug.Log(json);
         try{
             if(NetworkManager.Instance.GetConnectionStatus() == true){
                 Send();
@@ -156,6 +230,10 @@ public class ControllerValue
     public bool arm_disarm = false;
     public string flight_mode = "MANUAL";
     public bool light = false;
+    public bool connect_pixhawk = false;
+    public int pitch_camera = 90;
+
+    public string miniROV_direction;
 
 
     public int throttle = 500;

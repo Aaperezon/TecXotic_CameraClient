@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ConnectionSettings.cs" />
      <Compile Include="Assets\GStreamerUnity\Components\BaseVideoPlayer.cs" />
      <Compile Include="Assets\GStreamerUnity\Components\CameraCapture.cs" />
      <Compile Include="Assets\GStreamerUnity\Components\CustomPipelinePlayer.cs" />
@@ -79,6 +80,7 @@
      <Compile Include="Assets\GStreamerUnity\Scripts\ThreadJob.cs" />
      <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest0.cs" />
      <Compile Include="Assets\GStreamerUnity\Tests\GStreamerTest1.cs" />
+     <Compile Include="Assets\JoystickController2A.cs" />
      <Compile Include="Assets\RemoteController.cs" />
      <Compile Include="Assets\Scripts\Agent3.cs" />
      <Compile Include="Assets\Scripts\AgentsIndicator.cs" />
@@ -90,6 +92,7 @@
      <Compile Include="Assets\Scripts\ConnectionStatusManager.cs" />
      <Compile Include="Assets\Scripts\eliminar.cs" />
      <Compile Include="Assets\Scripts\FlightMode_script.cs" />
+     <Compile Include="Assets\Scripts\JoystickController4A.cs" />
      <Compile Include="Assets\Scripts\Light_script.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\Panel_Script.cs" />
@@ -139,6 +142,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+     <Compile Include="Assets\VisionCamera.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

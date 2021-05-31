@@ -105,6 +105,62 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ConnectPixhawk"",
+                    ""type"": ""Button"",
+                    ""id"": ""664db57f-3c8e-498d-8753-ed4a33e627ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CameraPitchUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""d25c8ea6-5b44-49d9-847a-cf0192e5ccf2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CameraPitchDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""e6495793-039a-4f02-a970-253a3b396e31"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MiniROV_forward"",
+                    ""type"": ""Button"",
+                    ""id"": ""beca4e1b-73a4-4615-9a8f-afde48079641"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MiniROV_backward"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd3a8275-6a50-4e85-b3ba-0a2c37af54b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MiniROV_left"",
+                    ""type"": ""Button"",
+                    ""id"": ""2f520b11-e4a3-4932-9b25-956f8d79eba1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MiniROV_right"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6f0fdb7-6021-4000-8123-5d1fea5fa693"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -198,17 +254,6 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2f56333d-e51b-4251-a19d-1142c097eb14"",
-                    ""path"": ""<DualShockGamepad>/rightStick/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Agent3_y"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""597136ab-621f-4a38-98f5-903245306a15"",
                     ""path"": ""<DualShockGamepad>/rightStickPress"",
                     ""interactions"": """",
@@ -226,6 +271,94 @@ public class @RemoteController : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Agent3_shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cba2342d-6815-4f34-9fa5-9bb0a66245f2"",
+                    ""path"": ""<DualShockGamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ConnectPixhawk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f56333d-e51b-4251-a19d-1142c097eb14"",
+                    ""path"": ""<DualShockGamepad>/rightStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Agent3_y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2df42cd-dee8-44c7-8e21-744e3f9265d0"",
+                    ""path"": ""<DualShockGamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraPitchUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6b06242-4e61-480c-b6a6-9077bbd72029"",
+                    ""path"": ""<DualShockGamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraPitchDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f858072-1852-44b1-bf15-e14b0c283b05"",
+                    ""path"": ""<DualShockGamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiniROV_forward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e97dbf2b-04b8-4333-98a0-da00f9da19b2"",
+                    ""path"": ""<DualShockGamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiniROV_backward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af8a9393-47a0-42ab-9d1b-8241e6b464f6"",
+                    ""path"": ""<DualShockGamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiniROV_left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f9e4042-0f44-4582-abed-dbf062e72a52"",
+                    ""path"": ""<DualShockGamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiniROV_right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -247,6 +380,13 @@ public class @RemoteController : IInputActionCollection, IDisposable
         m_Controller_Agent3_y = m_Controller.FindAction("Agent3_y", throwIfNotFound: true);
         m_Controller_Agent3_resize = m_Controller.FindAction("Agent3_resize", throwIfNotFound: true);
         m_Controller_Agent3_shoot = m_Controller.FindAction("Agent3_shoot", throwIfNotFound: true);
+        m_Controller_ConnectPixhawk = m_Controller.FindAction("ConnectPixhawk", throwIfNotFound: true);
+        m_Controller_CameraPitchUp = m_Controller.FindAction("CameraPitchUp", throwIfNotFound: true);
+        m_Controller_CameraPitchDown = m_Controller.FindAction("CameraPitchDown", throwIfNotFound: true);
+        m_Controller_MiniROV_forward = m_Controller.FindAction("MiniROV_forward", throwIfNotFound: true);
+        m_Controller_MiniROV_backward = m_Controller.FindAction("MiniROV_backward", throwIfNotFound: true);
+        m_Controller_MiniROV_left = m_Controller.FindAction("MiniROV_left", throwIfNotFound: true);
+        m_Controller_MiniROV_right = m_Controller.FindAction("MiniROV_right", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -307,6 +447,13 @@ public class @RemoteController : IInputActionCollection, IDisposable
     private readonly InputAction m_Controller_Agent3_y;
     private readonly InputAction m_Controller_Agent3_resize;
     private readonly InputAction m_Controller_Agent3_shoot;
+    private readonly InputAction m_Controller_ConnectPixhawk;
+    private readonly InputAction m_Controller_CameraPitchUp;
+    private readonly InputAction m_Controller_CameraPitchDown;
+    private readonly InputAction m_Controller_MiniROV_forward;
+    private readonly InputAction m_Controller_MiniROV_backward;
+    private readonly InputAction m_Controller_MiniROV_left;
+    private readonly InputAction m_Controller_MiniROV_right;
     public struct ControllerActions
     {
         private @RemoteController m_Wrapper;
@@ -322,6 +469,13 @@ public class @RemoteController : IInputActionCollection, IDisposable
         public InputAction @Agent3_y => m_Wrapper.m_Controller_Agent3_y;
         public InputAction @Agent3_resize => m_Wrapper.m_Controller_Agent3_resize;
         public InputAction @Agent3_shoot => m_Wrapper.m_Controller_Agent3_shoot;
+        public InputAction @ConnectPixhawk => m_Wrapper.m_Controller_ConnectPixhawk;
+        public InputAction @CameraPitchUp => m_Wrapper.m_Controller_CameraPitchUp;
+        public InputAction @CameraPitchDown => m_Wrapper.m_Controller_CameraPitchDown;
+        public InputAction @MiniROV_forward => m_Wrapper.m_Controller_MiniROV_forward;
+        public InputAction @MiniROV_backward => m_Wrapper.m_Controller_MiniROV_backward;
+        public InputAction @MiniROV_left => m_Wrapper.m_Controller_MiniROV_left;
+        public InputAction @MiniROV_right => m_Wrapper.m_Controller_MiniROV_right;
         public InputActionMap Get() { return m_Wrapper.m_Controller; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -364,6 +518,27 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @Agent3_shoot.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_shoot;
                 @Agent3_shoot.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_shoot;
                 @Agent3_shoot.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnAgent3_shoot;
+                @ConnectPixhawk.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnConnectPixhawk;
+                @ConnectPixhawk.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnConnectPixhawk;
+                @ConnectPixhawk.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnConnectPixhawk;
+                @CameraPitchUp.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnCameraPitchUp;
+                @CameraPitchUp.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnCameraPitchUp;
+                @CameraPitchUp.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnCameraPitchUp;
+                @CameraPitchDown.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnCameraPitchDown;
+                @CameraPitchDown.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnCameraPitchDown;
+                @CameraPitchDown.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnCameraPitchDown;
+                @MiniROV_forward.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_forward;
+                @MiniROV_forward.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_forward;
+                @MiniROV_forward.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_forward;
+                @MiniROV_backward.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_backward;
+                @MiniROV_backward.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_backward;
+                @MiniROV_backward.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_backward;
+                @MiniROV_left.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_left;
+                @MiniROV_left.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_left;
+                @MiniROV_left.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_left;
+                @MiniROV_right.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_right;
+                @MiniROV_right.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_right;
+                @MiniROV_right.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnMiniROV_right;
             }
             m_Wrapper.m_ControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -401,6 +576,27 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 @Agent3_shoot.started += instance.OnAgent3_shoot;
                 @Agent3_shoot.performed += instance.OnAgent3_shoot;
                 @Agent3_shoot.canceled += instance.OnAgent3_shoot;
+                @ConnectPixhawk.started += instance.OnConnectPixhawk;
+                @ConnectPixhawk.performed += instance.OnConnectPixhawk;
+                @ConnectPixhawk.canceled += instance.OnConnectPixhawk;
+                @CameraPitchUp.started += instance.OnCameraPitchUp;
+                @CameraPitchUp.performed += instance.OnCameraPitchUp;
+                @CameraPitchUp.canceled += instance.OnCameraPitchUp;
+                @CameraPitchDown.started += instance.OnCameraPitchDown;
+                @CameraPitchDown.performed += instance.OnCameraPitchDown;
+                @CameraPitchDown.canceled += instance.OnCameraPitchDown;
+                @MiniROV_forward.started += instance.OnMiniROV_forward;
+                @MiniROV_forward.performed += instance.OnMiniROV_forward;
+                @MiniROV_forward.canceled += instance.OnMiniROV_forward;
+                @MiniROV_backward.started += instance.OnMiniROV_backward;
+                @MiniROV_backward.performed += instance.OnMiniROV_backward;
+                @MiniROV_backward.canceled += instance.OnMiniROV_backward;
+                @MiniROV_left.started += instance.OnMiniROV_left;
+                @MiniROV_left.performed += instance.OnMiniROV_left;
+                @MiniROV_left.canceled += instance.OnMiniROV_left;
+                @MiniROV_right.started += instance.OnMiniROV_right;
+                @MiniROV_right.performed += instance.OnMiniROV_right;
+                @MiniROV_right.canceled += instance.OnMiniROV_right;
             }
         }
     }
@@ -418,5 +614,12 @@ public class @RemoteController : IInputActionCollection, IDisposable
         void OnAgent3_y(InputAction.CallbackContext context);
         void OnAgent3_resize(InputAction.CallbackContext context);
         void OnAgent3_shoot(InputAction.CallbackContext context);
+        void OnConnectPixhawk(InputAction.CallbackContext context);
+        void OnCameraPitchUp(InputAction.CallbackContext context);
+        void OnCameraPitchDown(InputAction.CallbackContext context);
+        void OnMiniROV_forward(InputAction.CallbackContext context);
+        void OnMiniROV_backward(InputAction.CallbackContext context);
+        void OnMiniROV_left(InputAction.CallbackContext context);
+        void OnMiniROV_right(InputAction.CallbackContext context);
     }
 }

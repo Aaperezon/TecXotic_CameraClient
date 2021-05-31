@@ -44,8 +44,8 @@ public class ReceiveData : MonoBehaviour
             clampIndicator.SendMessage("Set", received.clamp);
             //lightIndicator.SendMessage("Set", received.light);
             pressureIndicator2.SendMessage("Set", received.pressure);
-            pixhawkConection.SendMessage("Set", true);
-           
+            pixhawkConection.SendMessage("Set", received.connection_pixhwak);
+            
           
         }else{
             pixhawkConection.SendMessage("Set", false);

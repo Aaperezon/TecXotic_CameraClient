@@ -13,9 +13,6 @@ public class NetworkManager : MonoBehaviour
     public static NetworkManager Instance{get{return _instance;}}
     private static Thread clientReceiveThread; 	
 
-
-    public String Host = "192.168.2.2"; // 127.0.0.0 -- 127.0.0.1 = localhost
-    public Int32 Port = 55000;
     private static TcpClient mySocket = null;
     private static NetworkStream theStream = null;
     private static Image connectionStatus;
@@ -23,14 +20,19 @@ public class NetworkManager : MonoBehaviour
     private static ReceivedValue receivedJSON;
   
 
+    void Update(){
+
+    }
     void OnEnable()
     {
         if(_instance == null){
             _instance = this;
         }
+        Debug.Log("Activado");
 
-
-        Debug.Log("Setting up network...");
+        ConnectionConstants connection = ConnectionSettings.Load();
+        string Host = connection.IP;
+        int Port = connection.PORT;
         String message = "";
         connectionStatus = GameObject.Find("ConnectionStatus").GetComponent<Image>();
         connectionStatus.color = Color.red;
@@ -39,6 +41,7 @@ public class NetworkManager : MonoBehaviour
         //SET UP SOCKET CONNECTION
         try
         {
+            Debug.Log("Trying to connect: "+Host+ ":"+Port.ToString());
             mySocket.Connect(Host, Port);
             theStream = mySocket.GetStream();
             connectionStatus.color = Color.green;
@@ -161,8 +164,9 @@ public class NetworkManager : MonoBehaviour
 [Serializable]
     public class ReceivedValue
     {
-        public bool arm_disarm;
-        public string flight_mode;
+        public bool connection_pixhwak;
+        public int pitch_camera;
+        //public string flight_mode;
         public bool light;
 
 

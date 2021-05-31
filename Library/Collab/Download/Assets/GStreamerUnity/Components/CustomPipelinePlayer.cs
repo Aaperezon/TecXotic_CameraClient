@@ -2,10 +2,9 @@
 using System.Collections;
 using System;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
 [RequireComponent(typeof(GstCustomTexture))]
 public class CustomPipelinePlayer : MonoBehaviour {
-	CameraManager cameraSelection;
 	GstCustomTexture m_Texture;
 
 	public Texture2D BlittedImage;
@@ -21,18 +20,45 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	public long position;
 	public long duration;
 	bool _newFrame=false;
-	// Use this for initialization
-	void Start () {
-		cameraSelection = this.GetComponentInParent<CameraManager>();
+
+	void OnEnable(){
+		CameraPorts cameraports = CameraPanel.Load();
+		List<int> portSettings = new List<int>();
+		portSettings.Add(cameraports.camera1);
+		portSettings.Add(cameraports.camera2);
+		portSettings.Add(cameraports.camera3);
+		portSettings.Add(cameraports.camera4);
+		portSettings.Add(cameraports.idMiniROV);
+		//Debug.Log("El id está en la posicion: "+portSettings.Count);
+		GameObject parent = GameObject.Find("CameraManager");
+		for(int i = 0; i< parent.transform.childCount; i++){
+			if(this.gameObject.name == ("VideoStream"+(i+1) ) ){
+				port = portSettings[i].ToString();
+				int mjpegCamera = portSettings[portSettings.Count-1];
+				if(i == mjpegCamera){
+					pipeline = "udpsrc port="+port+" ! application/x-rtp,encoding-name=JPEG,payload=26 ! rtpjpegdepay ! jpegdec ! appsink name=videoSink";
+				}
+				else{
+					pipeline = "udpsrc port="+port+" ! application/x-rtp ! rtph264depay ! avdec_h264 ! videoconvert ! appsink name=videoSink";
+				}
+				
+			}
+
+		}
+
 		m_Texture = gameObject.GetComponent<GstCustomTexture>();
 		m_Texture.Initialize ();
-		pipeline = "udpsrc port="+cameraSelection.GetSelection()+" ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! appsink name=videoSink";
-		m_Texture.SetPipeline(pipeline);  // pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
-		m_Texture.Player.CreateStream ();
+        //StartCoroutine(Dalay());
+		System.Threading.Thread.Sleep(100);
+		//pipeline = "udpsrc port="+port+" ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! appsink name=videoSink";
+		m_Texture.SetPipeline(pipeline);  // 		pipeline+" ! video/x-raw,format=I420 ! videoconvert ! appsink name=videoSink"
+        //StartCoroutine(Dalay());
+		System.Threading.Thread.Sleep(100);
+		m_Texture.Player.CreateStream();
+        //StartCoroutine(Dalay());
+		System.Threading.Thread.Sleep(100);
 		m_Texture.Player.Play ();
 	
-	
-
 		m_Texture.OnFrameBlitted += OnFrameBlitted;
 		_img = new GstImageInfo ();
 		_img.Create (1, 1, GstImageInfo.EPixelFormat.EPixel_R8G8B8);
@@ -45,6 +71,10 @@ public class CustomPipelinePlayer : MonoBehaviour {
 		if(TargetMaterial!=null)
 			TargetMaterial.mainTexture=BlittedImage;
 	}
+	 IEnumerator Dalay()
+    {
+		        yield return new WaitForSeconds(3);
+    }
 	void OnFrameBlitted(GstBaseTexture src,int index)
 	{
 		//m_Texture.Player.CopyFrame (_img);
@@ -71,9 +101,17 @@ public class CustomPipelinePlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/*
+		string selectedCamera = CameraManager.GetInstance().GetSelection();
+		if(selectedCamera != actualCamera){
+			Initialize(selectedCamera);
+			Debug.Log ("New video...");
+
+		}
+		*/
+	
 		position=m_Texture.Player.GetPosition ()/1000;
 		duration=m_Texture.Player.GetDuration ()/1000;
-
 		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 			var p = (position - 5000) ;
 			if (p < 0)
@@ -91,5 +129,13 @@ public class CustomPipelinePlayer : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.P))
 			m_Texture.Play ();
+	}
+	void  OnDisable()
+	{
+		//Debug.Log("Cerrando instancia de cámara");
+		m_Texture.Pause();
+		m_Texture.Stop();
+		m_Texture.Close();
+
 	}
 }

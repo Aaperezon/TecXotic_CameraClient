@@ -52,6 +52,46 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "FlightMode",
+                    "type": "Button",
+                    "id": "fa024a47-dab3-4049-971c-e45faa39a23a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Agent3_x",
+                    "type": "Value",
+                    "id": "beed1254-ee8f-4a18-bb97-87f4ae44dc44",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Agent3_y",
+                    "type": "Value",
+                    "id": "fd8a8788-0ad3-46d7-89a1-bd952d9f5e39",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Agent3_resize",
+                    "type": "Button",
+                    "id": "48aecdd1-6ef5-4d74-9373-065da22a3fd1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Agent3_shoot",
+                    "type": "Button",
+                    "id": "40321201-4799-41f1-a41f-30a4f8c507c4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -118,6 +158,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "ArmDisarm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62955dca-90b0-4c0f-94b1-123dd6f8f327",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlightMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98b70a45-a3ac-4c9f-8ab4-b64cba0d9b7e",
+                    "path": "<DualShockGamepad>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agent3_x",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f56333d-e51b-4251-a19d-1142c097eb14",
+                    "path": "<DualShockGamepad>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agent3_y",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "597136ab-621f-4a38-98f5-903245306a15",
+                    "path": "<DualShockGamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agent3_resize",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "223249ef-ca00-4108-a75b-83340b569027",
+                    "path": "<DualShockGamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agent3_shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
