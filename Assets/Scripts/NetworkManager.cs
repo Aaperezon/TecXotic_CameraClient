@@ -164,7 +164,7 @@ public class NetworkManager : MonoBehaviour
 [Serializable]
     public class ReceivedValue
     {
-        public bool connection_pixhwak;
+        public bool connection_pixhawk;
         public int pitch_camera;
         //public string flight_mode;
         public bool light;

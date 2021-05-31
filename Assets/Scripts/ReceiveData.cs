@@ -19,7 +19,7 @@ public class ReceiveData : MonoBehaviour
         clampIndicator = GameObject.Find("ClampIndicator");
         lightIndicator = GameObject.Find("LightIndicator");
         pressureIndicator2 = GameObject.Find("PressureIndicator2");
-        pixhawkConection = GameObject.Find("PixhawkConection");
+        pixhawkConection = GameObject.Find("PixhawkConnection");
     }
 
     void Update()
@@ -44,8 +44,7 @@ public class ReceiveData : MonoBehaviour
             clampIndicator.SendMessage("Set", received.clamp);
             //lightIndicator.SendMessage("Set", received.light);
             pressureIndicator2.SendMessage("Set", received.pressure);
-            pixhawkConection.SendMessage("Set", received.connection_pixhwak);
-            
+            pixhawkConection.SendMessage("Set", received.connection_pixhawk);
           
         }else{
             pixhawkConection.SendMessage("Set", false);

@@ -97,7 +97,7 @@
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\Panel_Script.cs" />
      <Compile Include="Assets\Scripts\PIDSettings.cs" />
-     <Compile Include="Assets\Scripts\PixhawkConection_script.cs" />
+     <Compile Include="Assets\Scripts\PixhawkConnection.cs" />
      <Compile Include="Assets\Scripts\Pressure_script.cs" />
      <Compile Include="Assets\Scripts\ReceiveData.cs" />
      <Compile Include="Assets\Scripts\ROV_Rotation.cs" />

@@ -233,7 +233,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""62955dca-90b0-4c0f-94b1-123dd6f8f327"",
-                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/button12"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/button7"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -277,7 +277,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cba2342d-6815-4f34-9fa5-9bb0a66245f2"",
-                    ""path"": ""<DualShockGamepad>/select"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/button12"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -299,7 +299,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b2df42cd-dee8-44c7-8e21-744e3f9265d0"",
-                    ""path"": ""<DualShockGamepad>/dpad/up"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/hat/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -310,7 +310,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a6b06242-4e61-480c-b6a6-9077bbd72029"",
-                    ""path"": ""<DualShockGamepad>/dpad/down"",
+                    ""path"": ""<HID::Thrustmaster T.Flight Hotas X>/hat/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -321,7 +321,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7f858072-1852-44b1-bf15-e14b0c283b05"",
-                    ""path"": ""<DualShockGamepad>/buttonNorth"",
+                    ""path"": ""<HID::BDA NSW wired controller>/hat/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -332,7 +332,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e97dbf2b-04b8-4333-98a0-da00f9da19b2"",
-                    ""path"": ""<DualShockGamepad>/buttonSouth"",
+                    ""path"": ""<HID::BDA NSW wired controller>/hat/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -343,7 +343,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""af8a9393-47a0-42ab-9d1b-8241e6b464f6"",
-                    ""path"": ""<DualShockGamepad>/buttonWest"",
+                    ""path"": ""<HID::BDA NSW wired controller>/hat/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -354,7 +354,7 @@ public class @RemoteController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0f9e4042-0f44-4582-abed-dbf062e72a52"",
-                    ""path"": ""<DualShockGamepad>/buttonEast"",
+                    ""path"": ""<HID::BDA NSW wired controller>/hat/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -37,34 +37,6 @@ mray_gstreamer_initialize
 Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
 Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
@@ -145,90 +117,6 @@ mray_gstreamer_initialize
 Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
 Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
-Info: Checking is active
 mray_gstreamer_initialize
 Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
