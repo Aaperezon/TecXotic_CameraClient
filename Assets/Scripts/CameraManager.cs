@@ -12,7 +12,7 @@ public class CameraManager : MonoBehaviour
 
     public string[] ports = {"","","",""};
     public int mjpeg = 3;
-    int frameX = (int)(3 * 640);
+    int frameX = -(int)(3 * 640);
     int frameY = (int)(3 * 360);
     int width_screen = 3840/4;
     int height_screen = 0;

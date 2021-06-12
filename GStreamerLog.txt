@@ -6,137 +6,106 @@ GStreamerCore - Registering Elements!
 GStreamerCore - GStreamer inited
 Initializing GStreamer - Done
 Entering main loop
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
-mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
 mray_gstreamer_initialize
-Error: GstCustomVideoPlayer: Pipeline error:no element "udpsrc"
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+Info: Checking is active
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+mray_gstreamer_initialize
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
+Warning: GstPipelineHandler::HandleMessage(): warning in module videoSink  reported: Pipeline construction is invalid, please add queues.
 Info: Checking is active
 Info: Checking is active
 Info: Checking is active

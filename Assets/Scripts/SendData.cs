@@ -30,8 +30,22 @@ public class SendData : MonoBehaviour
         controller.Controller.FlightMode.performed += ctx => controllerValue.flight_mode = ChangeFlightMode(true);
         controller.Controller.FlightMode.canceled += ctx => controllerValue.flight_mode = ChangeFlightMode(false);
 
-        controller.Controller.CameraPitchUp.performed += ctx => controllerValue.pitch_camera = ChangePitchCamera(controllerValue.pitch_camera, 2);
-        controller.Controller.CameraPitchDown.performed += ctx => controllerValue.pitch_camera = ChangePitchCamera(controllerValue.pitch_camera, -2);
+        controller.Controller.CameraPitchUp.performed += ctx => {
+            pressed1Camera = true;
+            controllerValue.pitch_camera = ChangePitchCamera("u");
+        };
+        controller.Controller.CameraPitchUp.canceled += ctx => {
+            pressed1Camera = false;
+            controllerValue.pitch_camera = ChangePitchCamera(directionCamera);
+        };
+        controller.Controller.CameraPitchDown.performed += ctx => {
+            pressed2Camera = true;
+            controllerValue.pitch_camera = ChangePitchCamera("d");
+        };
+        controller.Controller.CameraPitchDown.canceled += ctx => {
+            pressed2Camera = false;
+            controllerValue.pitch_camera = ChangePitchCamera(directionCamera);
+        };
         
         controller.Controller.ConnectPixhawk.performed += ctx => controllerValue.connect_pixhawk = ChangeConnectPixhawk(true);
         controller.Controller.ConnectPixhawk.canceled += ctx => controllerValue.connect_pixhawk = ChangeConnectPixhawk(false);
@@ -100,9 +114,17 @@ public class SendData : MonoBehaviour
             return direction;
         }
     }
+    private static bool pressed1Camera = false;
+    private static bool pressed2Camera = false;
+    private static string directionCamera = "s";
 
-    private int ChangePitchCamera(int angle,int action){
-        return angle+action;
+    private string ChangePitchCamera(string input){
+        if(pressed1Camera == false && pressed2Camera == false){
+            return "s";
+        }else{
+            directionCamera = input;
+            return directionCamera;
+        }
     }
    
    
@@ -231,7 +253,7 @@ public class ControllerValue
     public string flight_mode = "MANUAL";
     public bool light = false;
     public bool connect_pixhawk = false;
-    public int pitch_camera = 90;
+    public string pitch_camera = "s";
 
     public string miniROV_direction;
 
